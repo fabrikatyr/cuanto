@@ -1,0 +1,23 @@
+﻿
+<!-- <div data-ng-controller="projectsCRUDController" data-ng-init="find()">  -->
+	
+<h3>Price Range by keyword</h3>
+		
+		Please enter the keyword you wish to search for pricing categories by
+		<br>
+		<input data-ng-model="priceRange.keyword1" type="text">
+		<input data-ng-model="priceRange.keyword2" type="text">
+		<input data-ng-model="priceRange.keyword3" type="text">
+		<br>
+		<button class="btn btn-success" ng-click="update(priceRange)"><i class="icon-white icon-check"></i> Update price range</button>
+		<button class="btn btn-warning" ng-click="cancel()"><i class="icon-white icon-off"></i> Reset price range</button>
+		<!-- Div starting fro charts-->
+		<div>
+		<div data-ng-controller="priceChart">
+		
+			<div google-chart chart="chart" style="{{chart.cssStyle}}"/> 
+ 
+    
+		<!-- Div ending for charts -->
+		</div>
+

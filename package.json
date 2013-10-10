@@ -1,12 +1,12 @@
 {
-    "name": "mean",
-    "description": "MEAN - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).",
-    "version": "1.0.0",
+    "name": "cuanto",
+    "description": "Cuanto - a pricing tool for Modern CraftsPeople (BONUS: Passport User Support).",
+    "version": "0.1.0",
     "private": false,
-    "author": "Amos Haviv",
+    "author": "Conor Duke",
     "repository": {
         "type": "git",
-        "url": "https://github.com/linnovate/mean.git"
+        "url": "https://github.com/fabrikatyr/cuanto.git"
     },
     "engines": {
         "node": "0.10.x",

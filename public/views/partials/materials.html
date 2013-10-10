@@ -1,0 +1,125 @@
+﻿<table class="table table-hover table-striped table-condensed table-bordered ordersTable" data-ng-controller="materialsController">
+ 
+                
+                <h4> List of current stock available</h4>
+    <thead>
+        <tr>
+            <th data-ng-click="setOrder('name')">Material name</th>
+            <th data-ng-click="setOrder('descriptor')">Type / color</th>
+            <th data-ng-click="setOrder('UOM')">Unit of Measure</th>
+            <th data-ng-click="setOrder('unitcost')">Unit cost</th>
+            <th data-ng-click="setOrder('currentstock')">Current stock</th>
+            <th data-ng-click="setOrder('currentstock')">Current value</th>
+            <th data-ng-click="setOrder('deletematerial')"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-hide="materials || materials.length > 0" class="error">
+            <td colspan="6">
+                <div class="text-center"><strong>Currently no material listed</strong></div>
+            </td>
+        </tr>
+        <tr data-ng-repeat="material in materials">
+            <td>
+                {{ material.materialName }}
+            </td>
+            <td>
+                {{ material.descriptor }}
+            </td>
+            <td>
+                {{ material.UOM }}
+            </td>
+             <td>
+                {{ material.unitcost | currency:"€" }}
+            </td>
+            <td>
+                {{ material.currentstock }}
+            </td>
+             <td>
+                {{ material.currentstock*material.unitcost | currency :"€" }}
+            </td>
+            <td align="left">
+            		<button title = "Delete project" class="btn close cardClose" data-ng-click="del($index)"><i class ="icon-trash"></i></button>
+					
+					<button title = "Edit project" class="btn close cardClose" data-ng-click="edit($index)"><i class ="icon-pencil"></i></button>
+            </td>
+        </tr>
+        <tr class="info">
+            <td colspan="5">
+            <b> Current value of stock holding </b>
+                
+            </td>
+            <td>
+            
+                <strong>{{ stockTotal | currency:"€" }}</strong>
+
+            </td>
+
+        </tr>
+        <td colspan="7">
+        <div ng-controller="CollapseDemoCtrl">
+    
+    
+                
+                
+    <button class="btn" ng-click="isCollapsed = !isCollapsed">Add Another Material</button>
+    
+    <div class="well-large">
+    
+    <div collapse="!isCollapsed">
+    <div ng-controller="materialsController">
+            <div class="row cardContainer">
+            <div class="span3">
+                Material Name:
+                <br />
+                <input data-ng-model="newMaterial.materialName" type="text" placeholder="Material Name">
+            </div>
+
+            <div class="span3">
+                Color / Descriptor
+                <br />
+                <input data-ng-model="newMaterial.descriptor" type="text" placeholder="color / description" >
+            </div>
+            
+            <div class="span2">
+                Unit of Measure (UOM):
+                <br />
+                <input data-ng-model="newMaterial.UOM" type="text" placeholder="sheets, mm2, coils" ><br/>
+                
+               
+            </div>
+            </div>
+
+            <div class="row cardContainer">
+            
+            <div class="span3">
+                Cost per {{newMaterial.UOM}}
+                <br />
+                <input data-ng-model="newMaterial.unitcost" type="number">
+                {{newMaterial.unitcost| currency:"€"}}
+            </div>
+            <div class="span3">
+                Current stock (in UOM):
+                <br />
+                <input data-ng-model="newMaterial.currentstock" type="number">
+                <br> UOM : <i> {{newMaterial.currentstock}} {{newMaterial.UOM}} (s) </i>
+            </div>
+            
+            <div class="span1.5">
+                <br>
+                <button id="submitMaterial" class="btn btn-primary" type="button" 
+                    data-ng-disabled="!newMaterial.materialName || !newMaterial.UOM || !newMaterial.currentstock" 
+                    data-ng-click="insertMaterial()">Add Material</button>
+               
+            </div>
+            </div>
+        </div>
+        <br /><br />
+        <div>
+            
+        </div>
+    </div>
+        <tr>
+
+    </tbody>
+</table>

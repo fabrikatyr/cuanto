@@ -1,0 +1,18 @@
+﻿<div data-ng-controller="projectsCRUDController" data-ng-init="find()"> 
+    <div class="container">
+        <header>
+            <h3>Detail on projects</h3>
+        </header>
+        <div>
+            <div class="row">
+                <div class="span12" data-ng-repeat="project in projects| orderBy:'duedate'">
+                    <div class="indent">
+                        <h4>{{ project.projectName }}</h4>
+                        Unit quantity <b>{{project.unitquantity}}</b><br>
+                        Expected revenue <b><i>{{project.unitquantity*project.unitprice| currency:"€"}}</b>
+                    
+                    <div data-ng-include="'views/partials/activityTable.html'" />
+                </div>
+            </div>
+        </div>
+    </div>

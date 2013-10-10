@@ -1,0 +1,122 @@
+﻿
+
+<table class="table table-hover table-striped table-condensed table-bordered" data-ng-controller="activityController" data-ng-init="find()">
+
+	<thead>	
+		<tr>		
+			<th data-ng-click="setOrder('id')">Step number</th>
+            <th data-ng-click="setOrder('activity')">Activity</th>
+            <th data-ng-click="setOrder('material')">Material</th>
+            <th data-ng-click="setOrder('duration')">Duration</th>
+            <th data-ng-click="setOrder('costperhour')">Cost per hour</th>
+            <th data-ng-click="setOrder('totalcost')">Total cost</th>
+            <th data-ng-click="setOrder('adjustactivity')"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-hide="project.activity || project.activity.length > 0" class="error">
+            <td colspan="8">
+                <div class="text-center"><strong>No activities found</strong></div>
+            </td>
+        </tr>
+        <tr data-ng-repeat="activity in project.activity | orderBy:orderby:reverse">
+            <td>
+                {{ activity.stepno }}
+            </td>
+            <td>
+                {{ activity.process }}
+            </td>
+              <td>
+                {{ activity.material }}
+            </td>
+            <td>
+                {{ activity.duration }}
+            </td>
+            <td>
+                {{ activity.costperhour| currency:"€" }}
+            </td>
+            <td>
+                {{ activity.costperhour *(activity.duration/60) | currency:"€" }}
+            </td>
+             <td>
+			 <div data-ng-controller="activityEDITController">
+					<button title = "Delete activity" class="btn close cardClose" data-ng-click="delActivity(project.id,($index))"><i class ="icon-trash icon"></i></button>
+					
+					<button title = "Edit activity" class="btn close cardClose" data-ng-click="editActivity(project.id,($index))"><i class ="icon-pencil icon"></i></button>
+			</div>
+            </td>
+
+        </tr>
+        <tr class="info">
+            <td colspan="5">
+             <b>Total Project Cost
+            </td>
+            <td>
+                <strong><i>{{projectTotal-1}}<i></strong>
+            </td>
+            
+        
+        </tr>
+        <td colspan="7">
+        
+        <div ng-controller="CollapseDemoCtrl">
+        <button class="btn" ng-click="isCollapsed = !isCollapsed">Add Another activity to process</button>
+    
+        <div class="well-large">
+    
+        <div collapse="!isCollapsed">
+        <div data-ng-controller="activityController"> 
+            <div class="row cardContainer">
+            <div class="span3">
+                Activity step number
+                <br />
+                <input data-ng-model="newActivity.stepno" type="number">
+            </div>
+
+            <div class="span3">
+                Activity name
+                <br />
+                <input data-ng-model="newActivity.process" type="text" placeholder="Sanding, assembly etc." >
+            </div>
+            
+            <div class="span2">
+                Material used:
+                <br />
+                <input data-ng-model="newActivity.material" type="text" placeholder="wood, metal , NONE" ><br/>
+                
+             </div>
+            </div>
+
+            <div class="row cardContainer">
+            
+            <div class="span3">
+                Estimate time in minutes
+                <br />
+                <input data-ng-model="newActivity.duration" type="time">
+                
+            </div>
+            <div class="span3">
+                Estimated cost per hour:
+                <br />
+                <input data-ng-model="newActivity.costperhour" type="number">
+                {{newActivity.costperhour| currency:"€"}}
+            </div>
+            
+            <div class="span1.5">
+                <br>
+                <button id="submitActivity" class="btn btn-primary" type="button" 
+                    data-ng-disabled="!newActivity.stepno || !newActivity.process" || !newMaterial.currentstock" 
+                    data-ng-click="addActivity()">Add Activity</button>
+               
+            </div>
+            </div>
+        </div>
+        
+        <div>
+            
+        </div>
+         </div>
+        
+        </tr>
+    </tbody>
+</table>

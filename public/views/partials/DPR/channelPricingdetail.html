@@ -1,0 +1,120 @@
+﻿<table class="table table-hover table-striped table-condensed table-bordered ordersTable" >
+    <thead>
+        <tr>
+            <th data-ng-click="setOrder('channel')">Channel Name</th>
+            <th data-ng-click="setOrder('saleprice')">Sales price</th>
+            <th data-ng-click="setOrder('margin')">% margin</th>
+            <th data-ng-click="setOrder('volume')">Volume</th>
+            <th data-ng-click="setOrder('costperhour')">Revenue</th>
+            <th data-ng-click="setOrder('totalcost')">Channel cost of sale </n>(commission etc.)</th>
+            <th data-ng-click="setOrder('deleteactivity')">Expected profit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-hide="project.channels || project.channels.length > 0" class="error">
+            <td colspan="4">
+                <div class="text-center"><strong>No channels selected to sell this project</strong></div>
+            </td>
+        </tr>
+        <tr data-ng-repeat="channel in project.channels ">
+            <td>
+                {{ channel.name }}
+            </td>
+            <td>
+			<input data-ng-model="channel.salesprice" >
+            </td>
+              <td>
+                <input data-ng-model="channel.margin" >
+            </td>
+            <td>
+                <input data-ng-model="channel.volume" >
+            </td>
+            <td>
+                {{ channel.volume*channelsalesprice| currency:"€" }}
+            </td>
+            <td>
+                <input data-ng-model="channel.commission">
+            </td>
+             <td>
+                {{ channel.volume*channel.salesprice*channel.margin| currency:"€" }}
+            </td>
+
+        </tr>
+        <tr class="info">
+            <td colspan="4">
+             <b>Total forecast revenue
+            </td>
+            <td>
+                <strong><i> {{ ordersTotal | currency }}<i></strong>
+            </td>
+            <td colspan="1">
+             <b>Total forecast profit
+            </td>
+            <td>
+                <strong><i>{{ ordersTotal | currency }}<i></strong>
+            </td>
+        
+        </tr>
+        <td colspan="7">
+        
+        <div ng-controller="CollapseDemoCtrl">
+        <button class="btn" ng-click="isCollapsed = !isCollapsed">Add Another channel to project</button>
+    
+        <div class="well-large">
+    
+        <div collapse="!isCollapsed">
+        
+            <div class="row cardContainer">
+            <div class="span3">
+                Activity step number
+                <br />
+                <input data-ng-model="newActivity.id" type="number">
+            </div>
+
+            <div class="span3">
+                Activity name
+                <br />
+                <input data-ng-model="newActivity.process" type="text" placeholder="Sanding, assembly etc." >
+            </div>
+            
+            <div class="span2">
+                Material used:
+                <br />
+                <input data-ng-model="newActivity.material" type="text" placeholder="wood, metal , NONE" ><br/>
+                
+             </div>
+            </div>
+
+            <div class="row cardContainer">
+            
+            <div class="span3">
+                Estimate time in minutes
+                <br />
+                <input data-ng-model="newActivity.duration" type="time">
+                
+            </div>
+            <div class="span3">
+                Estimated cost per hour:
+                <br />
+                <input data-ng-model="newActivity.costperhour" type="number">
+                {{newActivity.costperhour| currency:"€"}}
+            </div>
+            
+            <div class="span1.5">
+                <br>
+                <button id="submitActivity" class="btn btn-primary" type="button" 
+                    data-ng-disabled="!newActivity.id || !newActivity.process" || !newMaterial.currentstock" 
+                    data-ng-click="insertActivity()">Add Activity</button>
+               
+            </div>
+            </div>
+        </div>
+        
+        
+            
+        
+        </div>
+        
+        </tr>
+    </tbody>
+</table>

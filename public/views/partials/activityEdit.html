@@ -1,0 +1,55 @@
+		<div class="modal-header">
+            <h3>Please edit :{{selected.activityEdit.process}}</h3>
+        </div>
+        <div class="modal-body">
+			<!-- div for 1st row cards -->
+						<div class="row cardContainer">
+								<div class="span3">
+									Activity Name:
+									<br />
+									<input data-ng-model="activityEdit.process" type="text">
+								</div>
+
+								<div class="span3">
+									Estimated duration (mins):
+									<br />
+									<input data-ng-model="activityEdit.duration"  type="number">
+									{{activityEdit.duration/60}} hours
+								</div>
+								
+								<div class="span3">
+									Material required:
+									<br />
+									<input data-ng-model="activityEdit.material" type="text"> <br/>
+									{{newProject.unitprice| currency:"€"}}   
+								</div>
+						
+						<!--div for 2nd row cards -->
+						
+            
+								<div class="span3">
+									Estimated Cost-per-hour:
+									<br />
+									<input data-ng-model="activityEdit.costperhour" type="number" >
+								</div>
+						
+								<div class="span3">
+									Step number:
+									<br />
+									<input data-ng-model="activityEdit.stepno" type="number" > 
+								</div>
+								
+						</div>
+					
+        </div>
+			
+	   <div class="modal-footer">
+            <button class="btn btn-success" ng-click="okActivity()"><i class="icon-white icon-check"></i> Update project</button>
+            <button class="btn btn-warning" ng-click="cancelActivity()"><i class="icon-white icon-off"></i> Cancel edits</button>
+		
+        </div>
+	
+ 
+
+
+

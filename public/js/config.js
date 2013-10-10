@@ -1,20 +1,40 @@
 //Setting up route
 window.app.config(['$routeProvider',
-    function($routeProvider) {
+   function($routeProvider) {
         $routeProvider.
-        when('/articles', {
-            templateUrl: 'views/articles/list.html'
-        }).
-        when('/articles/create', {
-            templateUrl: 'views/articles/create.html'
-        }).
-        when('/articles/:articleId/edit', {
-            templateUrl: 'views/articles/edit.html'
-        }).
-        when('/articles/:articleId', {
-            templateUrl: 'views/articles/view.html'
-        }).
-        when('/', {
+		when('/myPrice',
+            {
+                //controller: 'projectsCRUDController',
+                templateUrl: 'views/partials/price.html'
+            })
+		.when('/myProjects',
+            {
+                controller: 'projectsCRUDController',
+                templateUrl: 'views/partials/projects.html'
+            })
+         .when('/myMaterials',
+            {
+                controller: 'materialsController',
+                templateUrl: 'views/partials/myMaterials.html'
+            })
+         .when('/materialpricing',
+            {
+                controller: 'materialsController',
+                templateUrl: 'views/partials/materials.html'
+            })
+         .when('/myActivities',
+            {
+               // controller: 'projectsCRUDController',
+                templateUrl: 'views/partials/projectdetail.html'
+            })
+     
+		.when('/Map',
+            {
+				controller: 'mapController',
+                templateUrl: 'views/partials/map.html'
+            })
+		.when('/', 
+			{
             templateUrl: 'views/index.html'
         }).
         otherwise({

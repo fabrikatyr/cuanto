@@ -1,0 +1,106 @@
+﻿body {
+    padding: 65px;
+}
+
+.view {
+    left: 60px;
+    position: relative;
+    opacity: 0.0;
+}
+
+.card {
+    background-color:#efefef;
+    border: 1px solid black;
+    height:75px;
+    width: 225px;
+    margin-bottom: 20px;
+}
+
+.cardHeader {
+    background-color: #006dcc;
+    font-size:14pt;
+    color:white;
+    padding:5px;
+}
+
+.cardClose {
+    color: white;
+    font-weight:bold;
+    margin-right:5px;
+}
+.DeletecardClose {
+    color:#006dcc ;
+    font-weight:bold;
+    margin-right:5px;
+}
+
+.cardContainer {
+    width:90%;
+}
+
+.cardBody {
+    padding-left: 5px;
+}
+
+.lastRow {
+    background-color: #ccc;
+}
+
+.indent {
+    margin-left:20px;
+}
+
+.ordersTable {
+    width:1000px;
+    margin-left:20px;
+}
+
+.orders th, .customerOrders th {
+    width:25%;
+    cursor: pointer;
+}
+
+.ordersTable tr:first-child th {
+    background-color: #006dcc;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+#submitCustomer {
+    margin-left:50px;
+    margin-top: -8px;
+}
+
+footer {
+    margin-top:10px;
+    font-weight: bold;
+}
+
+
+/* Bootstrap overrides */
+.navbar-inner {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+background-color: #f7fbfc ; /* Old browsers */
+  background-image: -moz-linear-gradient(top, #f7fbfc 0%, #d9edf2 40%, #add9e4 100%); /* FF3.6+ */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7fbfc), color-stop(40%,#d9edf2), color-stop(100%,#add9e4)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(top, #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(top, #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(top, #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* IE10+ */
+  background-image: linear-gradient(to bottom, #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* W3C */
+  background-image: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=0 ); /* IE6-9 */
+  background-repeat: repeat-x;
+   
+
+  
+}
+
+.navbar .nav {
+    margin-left:5px;
+    margin-top:4px;
+}
+
+.close {
+    opacity: 1.0;
+}

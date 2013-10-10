@@ -1,0 +1,63 @@
+﻿
+<table class="table table-hover table-striped table-condensed table-bordered" data-ng-controller="projectsCRUDController" >
+
+	<thead>	
+		<tr>		
+			<th data-ng-click="setOrder('name')">Project Name</th>
+            <th data-ng-click="setOrder('volume')">Unit volume</th>
+            <th data-ng-click="setOrder('price')">Unit price</th>
+            <th data-ng-click="setOrder('startdate')">Start date</th>
+            <th data-ng-click="setOrder('enddate')">Finish date</th>
+            <th data-ng-click="setOrder('totalrevenue')">Estimated revenue</th>
+            <th data-ng-click="setOrder('adjustactivity')"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-hide="projects.length> 0" class="error">
+            <td colspan="8">
+                <div class="text-center"><strong>No projects found</strong></div>
+            </td>
+        </tr>
+        <tr data-ng-repeat="project in projects ">
+            <td>
+                {{ project.projectName }}
+            </td>
+            <td>
+                {{ project.unitquantity }}
+            </td>
+              <td>
+                {{ project.unitprice }}
+            </td>
+            <td>
+                {{ project.startdate }}
+            </td>
+            <td>
+                {{ project.duedate }}
+            </td>
+            <td>
+               {{project.unitquantity*project.unitprice | currency:"€"}}
+            </td>
+             <td>
+			 <div data-ng-controller="projectsEditController">
+					<button title = "Delete project" class="btn close cardClose" data-ng-click="delProject($index)"><i class ="icon-trash icon"></i></button>
+					
+					<button title = "Edit project" class="btn close cardClose" data-ng-click="editProject($index)"><i class ="icon-pencil icon"></i></button>
+			</div>
+            </td>
+
+        </tr>
+        <tr class="info">
+            <td colspan="5">
+             <b>Total Project Cost
+            </td>
+            <td>
+                <strong><i>{{projectTotal-1}}<i></strong>
+            </td>
+            
+        
+        </tr>
+     
+        
+        
+    </tbody>
+</table>

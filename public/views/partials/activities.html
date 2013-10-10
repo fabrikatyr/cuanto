@@ -1,0 +1,80 @@
+﻿
+    <div class="container">
+    
+            <h3>Activities</h3>
+        <div class="row cardContainer">
+                <div class="span3 card" data-ng-repeat="activity in activities">
+                    <button class="btn close cardClose" data-ng-click="deleteActivity(Activity.id)">&times;</button>
+                    <div class="cardHeader">{{activity.activityName}} </div>
+                    <div class="cardBody"> Descriptor <b>{{activity.activitydescriptor}}</b></div>
+                    <div class="cardBody">Cost per hour <b><i>{{activity.costperhour| currency:"€"}}</b/></i></div>
+                   
+                </div>
+            </div>
+
+    <div class="span3">
+    </div>
+    <div ng-controller="CollapseDemoCtrl">
+    
+    
+                
+                
+    <button class="btn" ng-click="isCollapsed = !isCollapsed">Add Another Activity</button>
+    
+    <div class="well-large">
+    
+    <div collapse="!isCollapsed">
+    <div ng-controller="activityController">
+            <div class="row cardContainer">
+            <div class="span3">
+                Activity Name:
+                <br />
+                <input data-ng-model="newActivity.process" type="text" placeholder="Activity Name">
+            </div>
+
+            <div class="span3">
+                Estimated duration :
+                <br />
+                <input data-ng-model="newActivity.duration" type="text" placeholder="Manual / Digital / Machine">
+            </div>
+            
+            <div class="span3">
+                Cost per hour:
+                <br />
+                <input data-ng-model="newActivity.costperhour" type="number" ><br/>
+                {{newActivity.costperhour| currency:"€"}}
+               
+            </div>
+            </div>
+
+            <div class="row cardContainer">
+            
+            <div class="span3">
+                Materials consumed
+                <br />
+                <input data-ng-model="newActivity.material" type="text" placeholder="E.g Wood, Metal, None">
+            </div>
+			
+            <div class="span3">
+                Materials consumed
+                <br />
+                <input data-ng-model="newActivity.stepno" type="number">
+            </div>
+            
+            <div class="span3">
+                <br>
+                <button id="submitActivity" class="btn btn-primary" type="button" 
+                    data-ng-disabled="!newActivity.process"
+                    data-ng-click="createActivity()">Add Activity</button>
+               
+            </div>
+            </div>
+        </div>
+        <br /><br />
+        <div>
+            
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>

@@ -1,0 +1,62 @@
+﻿
+
+
+    <div class="container">
+    
+            <h3>Dashboard</h3>
+ 
+<div class="row cardContainer">
+
+
+            <div class="row">                
+            <div class="span2">
+            </div>
+                    <div class="span3 card" >
+                    <div class="cardHeader">Total Revenue : €2,396</div>
+                    <div class="cardBody">From 400 units <b>{{project.unitquantity}}</b></div>
+                    <div class="cardBody">With an average price of €5.99</b/></i></div>
+                   
+                
+                    </div>
+    
+
+     
+                
+                    <div class="span3 card" >
+                    <div class="cardHeader">Total Spend : €1,556</div>
+                    <div class="cardBody">With an average margin of 4% </b></div>
+                    <div class="cardBody">With an average unit cost of €3.89</b/></i></div>
+                   
+                
+                    </div>
+
+     
+                
+                    <div class="span3 card" >
+                    <div class="cardHeader">Total Activities : 300</div>
+                    <div class="cardBody">From 29 projects </b></div>
+                    <div class="cardBody">With an average time of 30 mins</b/></i></div>
+                   
+                
+                    </div>
+
+            </div>    
+</div>
+
+<div class="row">
+       <div class="span8">
+        
+        <div data-ng-controller="revenueChart">
+        <div google-chart chart="chart" style="{{chart.cssStyle}}"/>
+    </div>
+        </div>
+</div>
+
+        <div class="span4">
+        <div data-ng-controller="materialshareChart">
+        <div google-chart chart="chart" style="{{chart.cssStyle}}"/>
+        </div>
+        </div>
+        </div>
+        </div>
+

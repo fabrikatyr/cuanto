@@ -1,7 +1,7 @@
 {
-    "db": "mongodb://localhost/mean-dev",
+    "db": "mongodb://localhost/fablab-dev",
     "app": {
-        "name": "MEAN - A Modern Stack - Development"
+        "name": "Cuanto Pricing tool - Development"
     },
     "facebook": {
         "clientID": "APP_ID",

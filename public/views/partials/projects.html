@@ -1,0 +1,97 @@
+﻿
+<!-- <div data-ng-controller="projectsCRUDController" data-ng-init="find()">  -->
+<div data-ng-init="find()">
+	<h3>Projects</h3>
+		<!--starting div for project data-->
+		<div data-ng-controller="projectsCRUDController" data-ng-init="find()"> 
+		<div class="container">
+			<!--starting div for project list-->
+			<div class="row cardContainer">
+				<div class="span3 card" data-ng-repeat="project in projects">
+				<div data-ng-controller="projectsEditController"> 
+					<button title = "Delete project" class="btn close cardClose" data-ng-click="delProject($index)"><i class ="icon-trash icon-white"></i></button>
+					
+					<button title = "Edit project" class="btn close cardClose" data-ng-click="edit($index)"><i class ="icon-pencil icon-white"></i></button>
+					</div> 
+                    <div class="cardHeader">{{project.projectName + ' ' + project.duedate}}</div>
+                    <div class="cardBody">Unit quantity <b>{{project.unitquantity}}</b></div>
+                    <div class="cardBody">Expected revenue <b><i>{{project.unitquantity*project.unitprice| currency:"€"}}</b/></i></div>
+				
+				</div>
+			</div>
+		
+			<!-- Div starting for adding project -->
+			
+				<button class="btn" ng-click="isCollapsed = !isCollapsed">Add Another Project</button>
+				
+				<!-- Div for drop-down box -->
+				<div class="well-large">
+					<!-- Div for collapse -->
+					<div collapse="!isCollapsed">
+				        <!-- div for 1st row cards -->
+						<div class="row cardContainer">
+								<div class="span3">
+									Project Name:
+									<br />
+									<input data-ng-model="newProject.projectName" type="text" placeholder="Project Name">
+								</div>
+
+								<div class="span3">
+									Unit Quantity:
+									<br />
+									<input data-ng-model="newProject.unitquantity" type="number" >
+								</div>
+								
+								<div class="span3">
+									Unit Price:
+									<br />
+									<input data-ng-model="newProject.unitprice" type="number" ><br/>
+									{{newProject.unitprice| currency:"€"}}   
+								</div>
+						</div>
+						<!--div for 2nd row cards -->
+						<div class="row cardContainer">
+            
+								<div class="span3">
+									Start date:
+									<br />
+									<input data-ng-model="newProject.startdate" type="date">
+								</div>
+								<div class="span3">
+									Due Date:
+									<br />
+									<input data-ng-model="newProject.duedate" type="date" >
+								</div>
+								
+								<div class="span3">
+									<br>
+									<button id="submitproject" class="btn btn-primary" type="button" 
+										data-ng-disabled="!newProject.projectName || !newProject.unitquantity || !newProject.unitprice" 
+										data-ng-click="createProject()">Add project</button>
+								   
+								</div>
+						</div>
+					
+			
+						
+					</div>
+				</div>
+		
+			<!-- Div ending for projectAdd -->
+			</div>
+		
+		
+		 <!-- Div ending for project data -->
+		</div>
+		
+		
+		<!-- Div starting fro charts-->
+		<div data-ng-controller="projectcostChart">
+		
+			<div google-chart chart="chart" style="{{chart.cssStyle}}"/>
+		
+		<!-- Div ending for charts -->
+		</div>
+
+
+
