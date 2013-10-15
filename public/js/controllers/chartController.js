@@ -125,60 +125,22 @@ angular.module('material-chart', ['googlechart']).controller("materialshareChart
 
 });
 
-angular.module('price-chart', ['googlechart']).controller("priceChart", function ($scope) {
-
+  angular.module('price-chart', ['googlechart']).controller("priceChart", function ($scope) {
+ /*
    var chart1 = {};
-    chart1.type = "ColumnChart";
-    chart1.displayed = false;
+    chart1.type = "CandlestickChart";
     chart1.cssStyle = "height:300px; width:100%;";
 	
-chart1.data = {"cols": [
-        {id: "keyword", label: "keyword", type: "string"},
-        {id: "LP-id", label: "Low price", type: "number"},
-        {id: "median", label: "Median price", type: "number"},
-        {id: "HP-id", label: "High price", type: "number"}
-    ], "rows": [
-        {c: [
-            {v: "Accessory"},
-            {v: 19 },
-            {v: 12},
-            {v: 7}
-        ]},
-        {c: [
-            {v: "Material : Silver"},
-            {v: 13},
-            {v: 1},
-            {v: 12}
-        ]},
-        {c: [
-            {v: "3d printed"},
-            {v: 24},
-            {v: 5},
-            {v: 11}
-
-        ]},
-         {c: [
-            {v: "Combined Keywords"},
-            {v: 4},
-            {v: 30},
-            {v: 6}
-        ]}
-       
-    ]};
-
+chart1.data = {
+cols:[1,2,3,4,5],
+rows:[1,2,3,4,5]
+};
+	
     chart1.options = {
         "title": "Price Chart",
-		"isStacked": "true",
-        "fill": 20,
-        
-        "vAxis": {
-            "title": "EUR €", "gridlines": {"count": 10}
-        },
-        "hAxis":{"title": "Keyword"}
     };  
 
     $scope.chart = chart1;
-
     $scope.hideServer = false;
     $scope.selectionChange = function () {
         if($scope.hideServer) {
@@ -186,9 +148,11 @@ chart1.data = {"cols": [
         } else {
             $scope.chart.view = {};
         }
-    }
+    }   */
 
 });
+
+ 
 
 angular.module('project-cost-chart', ['googlechart']).controller("projectcostChart", function ($scope) {
 

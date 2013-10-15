@@ -1,10 +1,22 @@
 angular.module('mean.system').controller('HeaderController', ['$scope', 'Global', function ($scope, Global) {
     $scope.global = Global;
 
-    $scope.menu = [ {
-        "title": "Price search",
-        "link": "myPrice"
+    $scope.priceMenu = [ {
+        "title": "Price by Keyword",
+        "link": "pricebyKeyword"
     }, {
+        "title": "Price by Material",
+        "link": "pricebyMaterial"
+    }, { 
+		"title": "Price by color",
+        "link": "pricebyColor"
+    }, {
+       "title": "Price by process",
+        "link": "pricebyProcess"
+		
+    }];
+	
+	$scope.projectMenu = [ {
         "title": "My Projects",
         "link": "myProjects"
     }, { 
@@ -13,5 +25,14 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
     }, {
        "title": "My Materials",
         "link": "myMaterials"
+		
     }];
+	
+	$scope.aboutMenu = [ {
+        "title": "About us",
+        "link": "aboutus"
+		
+    }];
+	
+	
 }]);

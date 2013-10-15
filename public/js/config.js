@@ -2,25 +2,35 @@
 window.app.config(['$routeProvider',
    function($routeProvider) {
         $routeProvider.
-		when('/myPrice',
+		when('/myProjects',
             {
                 //controller: 'projectsCRUDController',
-                templateUrl: 'views/partials/price.html'
+                templateUrl: 'views/partials/projects.html'
             })
-		.when('/myProjects',
+		.when('/pricebyMaterial',
             {
                 controller: 'projectsCRUDController',
-                templateUrl: 'views/partials/projects.html'
+                templateUrl: 'views/partials/pricebyMat.html'
+            })
+			.when('/pricebyKeyword',
+            {
+                controller: 'projectsCRUDController',
+                templateUrl: 'views/partials/pricebyKeyword.html'
+            })
+			.when('/pricebyColor',
+            {
+                controller: 'projectsCRUDController',
+                templateUrl: 'views/partials/pricebyColor.html'
+            })
+			.when('/pricebyProcess',
+            {
+                controller: 'projectsCRUDController',
+                templateUrl: 'views/partials/pricebyProcess.html'
             })
          .when('/myMaterials',
             {
                 controller: 'materialsController',
                 templateUrl: 'views/partials/myMaterials.html'
-            })
-         .when('/materialpricing',
-            {
-                controller: 'materialsController',
-                templateUrl: 'views/partials/materials.html'
             })
          .when('/myActivities',
             {
@@ -28,10 +38,10 @@ window.app.config(['$routeProvider',
                 templateUrl: 'views/partials/projectdetail.html'
             })
      
-		.when('/Map',
+		.when('/aboutus',
             {
-				controller: 'mapController',
-                templateUrl: 'views/partials/map.html'
+				//controller: 'mapController',
+                templateUrl: 'views/partials/aboutus.html'
             })
 		.when('/', 
 			{
