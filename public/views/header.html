@@ -1,9 +1,8 @@
 <div data-ng-controller="HeaderController">
-	
-	<nav class="navbar-fixed navbar-inner" role="navigation">
 	<div class = "container">	
-		<div class="span5" align = "top">
-		 <a class="brand" href="/"><h3>Cuanto - Pricing for crafts people </h3></a>
+	
+		<div data-ng-show="global.user">
+		 <a class="brand" href="/">Cuanto 		</a>
 		</div>
 		<ul class="nav">
 			
@@ -49,5 +48,7 @@
             </ul>
         </li>
     </ul>
+	</div>
 </div>
+
 	
