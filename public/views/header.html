@@ -31,8 +31,11 @@
 			 
     </ul>
     <ul class="nav pull-right" data-ng-hide="global.authenticated">
-        <li><a href="signup">Signup</a>
+		<div data-ng-controller="usermodalController">
+        <li>
+		<button title = "Sign-up" class="btn close cardClose" data-ng-click="signup()">
         </li>
+		</div>
         <li class="divider-vertical"></li>
         <li><a href="signin">Signin</a>
         </li>

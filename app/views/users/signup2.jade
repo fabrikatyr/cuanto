@@ -1,0 +1,40 @@
+extends auth
+
+block auth
+    .modal-header
+      h3 Please sign-up for our service below
+    .modal-body
+      form.signup.form-horizontal.ng-pristine.ng-valid(action='/users', method='post')
+        .control-group
+          label.control-label(for='name') Full name
+          .controls
+            input#name(type='text', name='name', placeholder='Full name')
+        .control-group
+          label.control-label(for='email') Email
+          .controls
+            input#email(type='text', name='email', placeholder='Email')
+        .control-group
+          label.control-label(for='username') Username
+          .controls
+            input#username(type='text', name='username', placeholder='Username')
+        .control-group
+          label.control-label(for='password') Password
+          .controls
+            input#password(type='password', name='password', placeholder='Password')
+        .modal-footer
+          .form-actions
+            button.btn.btn-success(type='submit')
+              i.icon-white.icon-check
+              | Sign-up
+            button.btn.btn-warning(ng-click='login')
+              i.icon-white.icon-off
+              | Login
+      
+    .row
+    .offset1.span5
+      a(href="/auth/facebook")
+        img(src="/img/icons/facebook.png")
+      a(href="/auth/twitter")
+        img(src="/img/icons/twitter.png")
+      a(href="/auth/google")
+        img(src="/img/icons/google.png")

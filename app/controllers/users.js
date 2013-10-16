@@ -25,7 +25,7 @@ exports.signin = function(req, res) {
  * Show sign up form
  */
 exports.signup = function(req, res) {
-    res.render('users/signup', {
+    res.render('users/signup2', {
         title: 'Sign up',
         user: new User()
     });
@@ -55,7 +55,7 @@ exports.create = function(req, res) {
     user.provider = 'local';
     user.save(function(err) {
         if (err) {
-            return res.render('users/signup', {
+            return res.render('users/signup2', {
                 errors: err.errors,
                 user: user
             });

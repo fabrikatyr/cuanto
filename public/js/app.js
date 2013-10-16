@@ -2,5 +2,6 @@ window.app = angular.module('mean', ['ngCookies', 'ngResource', 'ui.bootstrap', 
 
 angular.module('mean.system', []);
 angular.module('mean.projects', []);
+angular.module('mean.signup', []);
 angular.module('charts', []);
 angular.module('imageupload', []);
