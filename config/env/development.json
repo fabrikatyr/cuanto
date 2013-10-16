@@ -1,5 +1,5 @@
 {
-    "db": "mongodb://localhost/fablab-dev",
+    "db": "mongodb://test1:1ts3t@ds047948.mongolab.com:47948/cuanto1",
     "app": {
         "name": "Cuanto Pricing tool - Development"
     },
