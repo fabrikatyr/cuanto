@@ -1,8 +1,7 @@
 <div data-ng-controller="HeaderController">
 	<div class = "container">	
-	
 		<div data-ng-show="global.user">
-		 <a class="brand" href="/">Cuanto 		</a>
+		 <a class="brand" style="font-family:Nevis;" href="/">CUANTO 		</a>
 		</div>
 		<ul class="nav">
 			
@@ -31,14 +30,24 @@
 			 
     </ul>
     <ul class="nav pull-right" data-ng-hide="global.authenticated">
+		
 		<div data-ng-controller="usermodalController">
         <li>
-		<button title = "Sign-up" class="btn close cardClose" data-ng-click="signup()">
-        </li>
-		</div>
-        <li class="divider-vertical"></li>
+		<button title = "Sign-up" class="btn btn-info btn-small" data-ng-click="signup()"><i class="icon-white icon-off"></i>
+        Sign-up
+		</button>
+		
+		<!-- <li class="divider-vertical"></li> -->
+
+		<button title = "Sign-in" class="btn btn-success btn-small" data-ng-click="signin()"><i class="icon-white icon-check"></i>
+        Sign-in
+		</button>
+		</li>
+		
+		</div> 
+<!--         <li class="divider-vertical"></li>
         <li><a href="signin">Signin</a>
-        </li>
+        </li> -->
     </ul>
  <ul class="nav pull-right" data-ng-show="global.authenticated">
         <li class="dropdown">

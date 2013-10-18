@@ -1,0 +1,51 @@
+
+<div class="signinmodal" >
+	<div class="modal-header" >
+            <h3> Cuanto</h3>
+			<i><h4>Enter your details to login</h4></i>
+    </div>
+		
+    <div class="signupmodal-body">
+		
+	<form action="/users/session", method="post" class="signin form-horizontal ng-pristine ng-valid">
+	
+		
+		<div class="control-group">
+			<label for="email" class="control-label">Email</label>
+			<div class="controls">
+				<input id="email" type="text" name="email" placeholder="Email">
+			</div>
+		</div>
+		
+
+		
+		<div class="control-group">
+			<label for="password" class="control-label">Password</label>
+			<div class="controls">
+				<input id="password" type="password" name="password" placeholder="Password">
+			</div>
+		</div>
+			
+	<div class="modal-footer">
+	   <div class="btn-toobar btn-group-justified">
+			<div class="btn-group">		
+					<button class="btn btn-success btn-lg" ng-click="login()"><i class="icon-white icon-check"></i>Sign-in</button>
+			</div>
+			
+		</div>	
+		<br>
+		<div data-ng-controller="usermodalController">
+			
+			<div class="btn-group">	
+			
+				<button class="btn btn-info btn-lg" type="submit"> <i class="icon-white icon-off"></i>Sign-up</button>
+			
+			</div>
+				
+				<button class="btn btn-warning btn-sm" ng-click="cancel()"><i class="icon-white icon-off"></i>Cancel</button>
+		</div>
+	</div>
+	</div> 
+		
+	</form>
+</div>

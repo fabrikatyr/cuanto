@@ -14,7 +14,7 @@ script(type='text/javascript', src='http://angular-ui.github.io/bootstrap/ui-boo
 
 script(type='text/javascript', src='lib/angular-ui-utils/modules/route.js')
 
-script(type='text/javascript', src='/lib/angular-bootstrap/ui-bootstrap-tpls.js')
+script(type='text/javascript', src='http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.js')
 script(type='text/javascript', src='/lib/angular-ui-utils/modules/route.js')
 
 
@@ -90,11 +90,15 @@ html
         .navbar-inner
           .container
             footer
+              .row
+                .span1
+                  |    
+              .row
                 .span3
                   | Enabling Creativity
                 .span4
                   | Twitter:
-                  a(href='http://twitter.com/Fabrikatyr')  @Fabrikatyr
+                  a(href='http://twitter.com/Fabrikatyr') @Fabrikatyr
                 .span4
                   | Web:
-                  a(href='http://www.fabrikatyr.com')  www.fabrikatyr.com
+                  a(href='http://www.fabrikatyr.com') www.fabrikatyr.com

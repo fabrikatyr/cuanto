@@ -1,57 +1,68 @@
 
 
-angular.module('mean.signup',['ui.bootstrap']).controller('usermodalController',['$scope', '$routeParams', '$location', 'Global','$modal','$log',  function ($scope,$location,$modal,Global,Projects,$http,$resource,$log,storeID){
-
-	$scope.global = Global;
-	var project = $scope.project;
+angular.module('mean.signup').controller('usermodalController',  function ($scope,$location,$modal,Global,$http,$resource,$log){
 	
-	$scope.siginup = function (index){
-			
-		var index =  index;
-		
-		storeID.setProperty(index);
-		
-		var usersignupModal =   $modal.open({
-				templateUrl: '/views/partials/signupmodal.html',
-				controller: signupModalController,
+$scope.items = ['item1', 'item2', 'item3'];
+	
+	$scope.signup = function (){
+
+		var modalInstance = $modal.open({
+		templateUrl: 'views/partials/signup_modal.html',
+			controller: ModalInstanceCtrl,
 				resolve: {
-						moduleDel: function () {
-						return $scope.projects;
-						}
+					items: function () {
+					return $scope.items;
+					}
 				}
-				
-		  
-			});
-			usersignupModal.result.then(function () {
-			}, function () {
-				$log.info('Modal dismissed at: ' + new Date());
-			});   
+		});
+
+		modalInstance.result.then(function (selectedItem) {
+		  $scope.selected = selectedItem;
+		}, function () {
+		  $log.info('Modal dismissed at: ' + new Date());
+		});
 	};
-	
-	
-	var signupModalController = function ($scope, $modalInstance,moduleDel,storeID) {
-		$scope.moduleDel = moduleDel;
-		$scope.projectDel = moduleDel;
+
+
+	$scope.signin = function (){
+
+		var modalInstance = $modal.open({
+		templateUrl: 'views/partials/signin_modal.html',
+			controller: ModalInstanceCtrl,
+				resolve: {
+					items: function () {
+					return $scope.items;
+					}
+				}
+		});
+
+		modalInstance.result.then(function (selectedItem) {
+		  $scope.selected = selectedItem;
+		}, function () {
+		  $log.info('Modal dismissed at: ' + new Date());
+		});
+	};
+
+
+	var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
+
 		
-		var id = storeID.getProperty();
-		
-		
+
 		$scope.selected = {
-			projectDel: $scope.moduleDel[id]
-		};
+			
+		  };
 
-		$scope.remove = function () {
-			var id = deleteID.getProperty();
-			$scope.moduleDel.splice(id, 1 ); 
-			alert("stuff is working");			
-			alert(moduleDel[id].projectName);
-			moduleDel[id].$remove();
-			$modalInstance.close();
-			};
-		
-		$scope.cancel = function () {
-			$modalInstance.dismiss('cancel');
-		};
+	
+
+	$scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+	};
 	};
 
-}]);
+});
+
+
+
+app.controller('videowindow',function ($scope) {
+  $scope.isCollapsed = true;
+});

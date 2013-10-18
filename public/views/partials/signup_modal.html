@@ -1,10 +1,11 @@
 
-
-	<div class="modal-header">
-            <h3>Please sign-up for our service below</h3>
+<div class="signupmodal" >
+	<div class="modal-header" >
+            <h3>Please enter your details to explore Cuanto</h3>
+			<i><h4> They will not be shared with anyone, Promise! </h4></i>
     </div>
 		
-    <div class="modal-body">
+    <div class="signupmodal-body">
 		
 	<form action="/users" method="post" class="signup form-horizontal ng-pristine ng-valid">
 		<div class="control-group">
@@ -35,17 +36,34 @@
 			</div>
 		</div>
 			
-	   <div class="modal-footer">
-	   <div class="form-actions">
-            <button class="btn btn-success" type="submit"><i class="icon-white icon-check"></i> Sign-up</button>
-            <button class="btn btn-warning" ng-click="login"><i class="icon-white icon-off"></i> Login</button>
+	<div class="modal-footer">
+			<div data-ng-controller="usermodalController">
+			<div class="btn-toobar btn-group-justified">
+			<div class="btn-group">	
+			
+				<button class="btn btn-info btn-lg" type="submit"> <i class="icon-white icon-off"></i>Sign-up</button>
+			
+			</div>
+			</div>	
+				<br>
 		
-        </div>
-		</div>
-	
+			<div class="btn-toobar btn-group-justified">
+				<div class="btn-group">		
+					<button class="btn btn-success btn-lg" ng-click="signin()"><i class="icon-white icon-check"></i>Sign-in</button>
+				</div>
+				<div class="btn-group">		
+				<button class="btn btn-warning btn-sm" ng-click="cancel()"><i class="icon-white icon-off"></i>Cancel</button>
+				</div>
+			</div>
+			</div>
+		</div> 
+		
 	</form>
- 
-	<div class="row"><div class="offset1 span5"><a href="auth/facebook"><img src="./Cuanto Pricing tool - Development - Sign up_files/facebook.png"></a><a href="auth/twitter"><img src="./Cuanto Pricing tool - Development - Sign up_files/twitter.png"></a><a href="auth/google"><img src="./Cuanto Pricing tool - Development - Sign up_files/google.png"></a></div>
+	
+            <h4>Sign-up using your account in one of the platforms below</h4>
+    
+	
+	<div class="row"><div class="offset1 span5"><a href="auth/facebook"><img src="img/icons/facebook.png"></a><a href="auth/twitter"><img src="img/icons/twitter.png"></a><a href="auth/google"><img src="img/icons/google.png"></a></div>
 
 	</div>
-
+</div>

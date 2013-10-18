@@ -2,25 +2,39 @@
 <div class="splash">
 
 </div>
-	<div class="container-fluid">
-		 
-				
-			<div id ="titletext">
-			<h3> Cuanto - The pricing tool for craftspeople
+	<div class="container-fluid"> 
 			
-			</div>
-			<div class="container-video">
-			<iframe width="620" height="350" src="http://www.wideo.co/embed/531041380986643353?height=330&width=588" frameborder="0" allowfullscreen ></iframe>
-			</div>
-		
+<div ng-controller="videowindow" align ="center">
+						<div collapse="isCollapsed">
+						<div data-ng-controller="usermodalController">
+							<div class="btn-group-justified">
+								<button type="button" align = "center" class="btn myButton btn-success" ng-click="signup()"><i class="icon-white icon-off"></i>  <div class="font-family:gotham"><h5><b>Find out how to get the best price for your work</div></h5></button>
+						</div>	
+			
+						</div>
+						
+						<br>
+						
+						<div class="container-video">
+								<iframe width="540" height="310" src="http://www.wideo.co/embed/531041380986643353?height=282&width=500" frameborder="0" allowfullscreen ></iframe>
+							</div>
+						</div>
 
-		<div id ="text">
-			<div align ="center">
-				<a href="signup">
-				<button type="button" align = "center" class="btn myButton btn-lg btn-info"><h4>Find out how to get the best price for your work<h4></button></a>
-			</div>		
+			
+			
+			
+					<button class="btn myButton btn-info" ng-click="isCollapsed = !isCollapsed">
+						<div id ="titletext">
+							<h2> CUANTO</h2>
+						</div>
+							<h4>A PRICING TOOL FOR CRAFTSPEOPLE </h4>
+							<h6><i>click here </i> </h6>
+					</button>
+						
+			</div>
+				
 		</div>
-	</div>
+	<!-- </div> -->
 
 </section>
 
