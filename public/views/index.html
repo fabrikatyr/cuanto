@@ -7,9 +7,11 @@
 <div ng-controller="videowindow" align ="center">
 						<div collapse="isCollapsed">
 						<div data-ng-controller="usermodalController">
+							<div data-ng-hide="global.authenticated">
 							<div class="btn-group-justified">
 								<button type="button" align = "center" class="btn myButton btn-success" ng-click="signup()"><i class="icon-white icon-off"></i>  <div class="font-family:gotham"><h5><b>Find out how to get the best price for your work</div></h5></button>
-						</div>	
+							</div>
+							</div>	
 			
 						</div>
 						

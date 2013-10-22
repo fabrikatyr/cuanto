@@ -1,4 +1,4 @@
-﻿
+﻿/* Bootstrap overrides */
 body {
     padding: 00px;
 }
@@ -7,12 +7,10 @@ body {
 @font-face { font-family: Franchise; src: url('/font/FranchiseBold.ttf'); } 
 
 .splash{
-	background-image:url('/img/bkground/water_drop.jpg');
+	background-image:url('/img/bkground/water_drop_blur.jpg');
     width:100%; 
 	height: 100%;
 	 background-size: 100%  100%;  
-	/* max-width: 1170px; /* or 950px */
-	/* max-height: 768px;  /*or 950px*/ 
 	background-repeat:no-repeat;
 	background-position: left top;
 	position:absolute; 
@@ -188,21 +186,40 @@ body {
 }
 
 footer {
-    margin-top:10px;
+    margin-top:20px;
     font-weight: bold;
+	position:relative;
+	 background-color: #fafafa;
+  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-repeat: repeat-x;
+  border: 1px solid #d4d4d4;
+   -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  *zoom: 1;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+		  min-height: 40px;
+		  font-family:Nevis;
 }
 
 
-/* Bootstrap overrides */
+
 .navbar {
-	opacity: 1;
+opacity: 1;
   background-color: transparent;
 }
 .navbar-inner {
   min-height: 40px;
   max-height: 124px;
-  padding-right: 20%;
-  padding-left: 20%;
+  padding-right: 10%;
+  padding-left: 10%;
   background-color: #fafafa;
   background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
