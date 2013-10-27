@@ -18,6 +18,7 @@ overflow-y:auto;
 	z-index:-2;
 	left:0;
     right:0;
+	overflow-y:auto;
 }
 iframe {width:50vw;}
 
@@ -109,7 +110,9 @@ line-height:5.6vw;
   left: 50%;
   z-index: 1050;
   width: 50vw;
-  overflow:auto;
+  height: 60vw;
+  overflow-y:auto;
+  overflow-x:auto;
   margin-left: -25vw;
   background-color: #ffffff;
   border: 1px solid #999;
