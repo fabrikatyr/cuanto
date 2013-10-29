@@ -28,11 +28,18 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
 		
     }];
 	
-	$scope.aboutMenu = [ {
-        "title": "About us",
-        "link": "aboutus"
+	$scope.popular = [ {
+        "title": "Popular Materials",
+        "link": "Pmaterials"
 		
-    }];
+    }, { 
+		"title": "Popular Colors",
+        "link": "Pcolors"
+    }, { 
+		"title": "Popular tags",
+        "link": "Ptags"
+    }
+	];
 	
 	
 }]);

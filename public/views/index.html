@@ -1,28 +1,26 @@
-<div class="splash">
 
-</div> 
 <section data-ng-controller="IndexController">
-
-	<div class="container-fluid" > 
-			
+<div class="container-fluid">
+<br>
+<br>
+	
 <div ng-controller="videowindow" align ="center">
-						<div collapse="isCollapsed">
+			<div collapse="isCollapsed">
 							<div data-ng-hide="global.authenticated">
-						<div data-ng-controller="usermodalController">
-							<div class="btn-group-justified">
-								<button type="button" align = "center" class="btn-info" ng-click="signup()"><i class="icon-white icon-off"></i>  <div class="typetext"><b>Find out how to get the best price for your work</div></button>
-							</div>
-							</div>	
-			
-						</div>
+						<div data-ng-controller="usermodalController"> 
+							
+								<button type="button"  class=" myButton" data-ng-click="signup()"><div class="typetext">Click here to find out more about pricing</div>
+								</button>
+						
+						</div> 
 						
 						<br>
 						
 						<div class="container-video">
-								<iframe width="500vw" height="315vw" src="//www.youtube.com/embed/LxuvfsZP0zk" frameborder="0" allowfullscreen></iframe>
+								<iframe width="500vw" height="315vw" src="//www.youtube.com/embed/et6n1DpAQjQ" frameborder="0" allowfullscreen></iframe>
 							</div>
 						</div>
-						
+			</div>			
 						<button class="titlebutton" ng-click="isCollapsed = !isCollapsed">
 							
 								<div class="titletext">
