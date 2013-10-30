@@ -2,8 +2,9 @@
 angular.module('mean.quotes').controller('quoteController', ['$scope', '$routeParams', '$location','Quotes','$modal','$log', function ($scope, $routeParams, $location, Quotes, $modal,$http,$resource,log,deleteID) {
    
 	
+	
     $scope.createQuote = function() {
-	alert("quote button firing");
+
         var quote = new Quotes({
             quoteName: $scope.newQuote.quoteName,
 			description: $scope.newQuote.description,
