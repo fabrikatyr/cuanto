@@ -31,3 +31,14 @@ exports.project = {
         next();
     }
 };
+/**
+ * Quote authorizations routing middleware
+ */
+exports.quote = {
+    hasAuthorization: function(req, res, next) {
+        if (req.quote.user.id != req.user.id) {
+            return res.send(401, 'User is not authorized');
+        }
+        next();
+    }
+};

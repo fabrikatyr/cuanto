@@ -1,0 +1,74 @@
+
+<div data-ng-controller ="quoteController">
+	<div class="modal-header" >
+            <h3>Please enter some keywords,materials and colors</h3>
+			<i><h4> You can also add a short description of the product </h4></i>
+    </div>
+		
+    <div class="signupmodal-body">
+						<div class="row cardContainer">
+								<div class="span3">
+									Quote Name:
+									<br />
+									<input data-ng-model="newQuote.quoteName" type="text">
+								</div>
+
+								<div class="span3">
+									Description
+									<br />
+									<input data-ng-model="newQuote.unitquantity" type="number" >
+								</div>
+								
+								<div class="span3">
+									What region are will you be selling your product?
+									<br />
+									<input data-ng-model="newQuote.region" type="number"> <br/>
+									{{newProject.unitprice| currency:"€"}}   
+								</div>
+						</div>
+						<!--div for 2nd row cards -->
+						<div class="row cardContainer">					
+            
+								<div class="span3">
+									Materials you are planning to use (separate with a space)
+									<br />
+									<input data-ng-model="newQuote.matstring" type="text" >
+								</div>
+						
+								<div class="span3">
+									Any keywords associated with your project
+									<br />
+									<input data-ng-model="newQuote.tagstring" type="text" > 
+								</div>
+		
+								<div class="span3">
+									The different Colors you are planning to use
+									<br />
+									<input data-ng-model="newQuote.colorstring" type="text" > 
+								</div>
+								
+						</div>
+			
+	</div>
+			
+	<div class="modal-footer">
+			<div data-ng-controller="usermodalController">
+			<div class="btn-toobar btn-group-justified">
+			<div class="btn-group">	
+			
+				<button class="btn btn-info btn-lg" type="submitquote()"> <i class="icon-white icon-off"></i>Request a free pricing quote</button>
+			
+			</div>
+			</div>	
+				<br>
+		
+			<div class="btn-toobar btn-group-justified">
+				
+				<div class="btn-group">		
+				<button class="btn btn-warning btn-sm" ng-click="cancel()"><i class="icon-white icon-off"></i>Cancel</button>
+				</div>
+			</div>
+			</div>
+	</div> 
+		
+</div>

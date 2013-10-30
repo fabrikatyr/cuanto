@@ -1,17 +1,17 @@
 {
     "db": "mongodb://test1:1ts3t@ds047948.mongolab.com:47948/cuanto1",
     "app": {
-        "name": "Cuanto Pricing tool - Development"
+        "name": "Cuanto Pricing tool - Beta"
     },
     "facebook": {
-        "clientID": "APP_ID",
-        "clientSecret": "APP_SECRET",
-        "callbackURL": "http://localhost:3000/auth/facebook/callback"
+        "clientID": "1419089901652771",
+        "clientSecret": "df66f1716a395cccf67ee1f84b8c1484",
+        "callbackURL": "http://cuanto.fabrikatyr.com/#!/auth/facebook/callback"
     },
     "twitter": {
-        "clientID": "CONSUMER_KEY",
-        "clientSecret": "CONSUMER_SECRET",
-        "callbackURL": "http://localhost:3000/auth/twitter/callback"
+        "clientID": "70oPHGlBIdMyq2DY9MsARA",
+        "clientSecret": "rtPda5Z4TN7qy38LOGc4wcgvGaN4WiQUjnxheH4oEc",
+        "callbackURL": "http://cuanto.fabrikatyr.com/#!/auth/twitter/callback"
     },
     "github": {
         "clientID": "APP_ID",

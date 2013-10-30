@@ -6,7 +6,7 @@
 	
 <div ng-controller="videowindow" align ="center">
 			<div collapse="isCollapsed">
-							<div data-ng-hide="global.authenticated">
+					<div data-ng-hide="global.authenticated">
 						<div data-ng-controller="usermodalController"> 
 							
 								<button type="button"  class=" myButton" data-ng-click="signup()"><div class="typetext">Click here to find out more about pricing</div>
@@ -15,12 +15,23 @@
 						</div> 
 						
 						<br>
-						
-						<div class="container-video">
-								<iframe width="500vw" height="315vw" src="//www.youtube.com/embed/et6n1DpAQjQ" frameborder="0" allowfullscreen></iframe>
-							</div>
+					</div>	
+					
+					<div data-ng-show="global.user">
+						<div data-ng-controller="quotemodalController">
+					<button type="button"  class=" myButton" data-ng-click="getquote()"><div class="typetext">Click here to get a custom price estimate for a project</div>
+								</button>
+					
+						<br>
 						</div>
-			</div>			
+					</div>
+					
+			
+					<div class="container-video">
+								<iframe width="500vw" height="315vw" src="//www.youtube.com/embed/EzM6N90sxs8" frameborder="0" allowfullscreen></iframe>
+					</div>
+			</div>
+			
 						<button class="titlebutton" ng-click="isCollapsed = !isCollapsed">
 							
 								<div class="titletext">

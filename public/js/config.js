@@ -38,10 +38,20 @@ window.app.config(['$routeProvider',
                 templateUrl: 'views/partials/projectdetail.html'
             })
      
-		.when('/aboutus',
+		.when('/Pmat',
             {
 				//controller: 'mapController',
-                templateUrl: 'views/partials/aboutus.html'
+                templateUrl: 'views/partials/MatCloud.html'
+            })
+		.when('/Pcolors',
+            {
+				//controller: 'mapController',
+                templateUrl: 'views/partials/colorCloud.html'
+            })
+		.when('/Ptags',
+            {
+				//controller: 'mapController',
+                templateUrl: 'views/partials/tagsCloud.html'
             })
 		.when('/', 
 			{

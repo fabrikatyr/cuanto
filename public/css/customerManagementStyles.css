@@ -1,5 +1,6 @@
 ﻿/* Bootstrap overrides */
 body {
+overflow-y:auto;
 }
 
 @font-face { font-family: Nevis; src: url('/font/nevis.ttf'); } 
@@ -9,8 +10,8 @@ body {
 }
 
 .btn-small{
-  width: 5vw;
-height: 2.2vw;
+/*   width: 8vw;
+	height: 2vw; */
   padding: 0.01vw 0.01vw;
   font-size: 1vw;
   -webkit-border-radius: 0.3vw;
@@ -186,7 +187,6 @@ line-height:5.6vw;
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  position:center;
   
   width: 80vw;
   
@@ -338,11 +338,30 @@ footer {
 .navbar {
 opacity: 1;
   background-color: transparent;
-  max-height: 3vw;
+  max-height: 40px;
 }
+
+
+.graph img{
+	
+	width: 60vw;
+    height: auto;
+	 display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+.cloud img{
+	
+	width: 80vw;
+    height: auto;
+	 display: block;
+    margin-left: auto;
+    margin-right: auto;
+ }
+ 
 .navbar-inner {
   min-height: 3vw;
-  max-height: 3vw;
+  max-height: 40px;
   padding-right: 5%;
   padding-left: 10%;
   background-color: #fafafa;
@@ -361,6 +380,7 @@ opacity: 1;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
      -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
           box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+
 }
 
 .btn-signup{
@@ -371,6 +391,7 @@ opacity: 1;
     margin-left:0.2vw;
     margin-top:0.5vw;
 	margin: 0 1vw 1vw 0;
+	height:100%;
 }
 
 .close {

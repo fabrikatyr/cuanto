@@ -30,7 +30,7 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
 	
 	$scope.popular = [ {
         "title": "Popular Materials",
-        "link": "Pmaterials"
+        "link": "Pmat"
 		
     }, { 
 		"title": "Popular Colors",

@@ -75,6 +75,19 @@ module.exports = function(app, passport, auth) {
 
     //Finish with setting up the projectId param
     app.param('projectId', projects.project);
+	
+	
+	//Quote Routes
+   var quotes = require('../app/controllers/quotes');
+    app.get('/quotes', quotes.all);
+    app.post('/quotes', auth.requiresLogin, quotes.create);
+	app.get('/quotes/:quoteId', quotes.show);
+    app.put('/quotes/:quoteId', auth.requiresLogin, auth.quote.hasAuthorization, quotes.update);
+	app.del('/quotes/:quoteId', auth.requiresLogin, auth.quote.hasAuthorization, quotes.destroy);  
+	
+
+    //Finish with setting up the quoteId param
+    app.param('quoteId', quotes.quote);
 
     //Home route
     var index = require('../app/controllers/index');
