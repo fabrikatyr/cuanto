@@ -41,7 +41,7 @@ window.app.config(['$routeProvider',
 		.when('/Pmat',
             {
 				//controller: 'mapController',
-                templateUrl: 'views/partials/MatCloud.html'
+                templateUrl: 'views/partials/Matcloud.html'
             })
 		.when('/Pcolors',
             {
