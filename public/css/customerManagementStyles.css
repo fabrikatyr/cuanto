@@ -8,7 +8,17 @@ overflow-y:auto;
 
 .splash{
 }
+.btn-med{
+/*   width: 8vw;
+	height: 2vw; */
+  padding: 0.0vw 0.0vw;
+  font-size: 1.8vw;
+  -webkit-border-radius: 0.3vw;
+     -moz-border-radius: 0.3vw;
+          border-radius: 0.3vw;
+		  display: inline-block;
 
+}
 .btn-small{
 /*   width: 8vw;
 	height: 2vw; */
@@ -127,16 +137,40 @@ line-height:5.6vw;
 	z-index: 100;
 	
 }
+.quotemodal-header {
+	padding: 0.5vw 1px 1px 1px;
+	text-align:center;
+	font-size: 2.5vw;
+	line-height: 2.6vw;
+	border-bottom: 1px solid #ddd;
+	background-color: #f5f5f5;
+}
+.quotemodal{
+  width: 70vw;
+  height: 36vw;
+  margin-left: -35vw;
+  left: 50%;
+}
+
+
+.stringTextbox {
+
+height: 8vw;
+}
+.singnupmodal{
+  width: 50vw;
+  height: 60vw;
+  margin-left: -25vw;
+  left: 50%;
+}
+.quotemodal,
 .signupmodal {
   position: fixed;
   top: 5%;
-  left: 50%;
   z-index: 1050;
-  width: 50vw;
-  height: 60vw;
   overflow-y:auto;
   overflow-x:auto;
-  margin-left: -25vw;
+  
   background-color: #ffffff;
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -152,6 +186,7 @@ line-height:5.6vw;
      -moz-background-clip: padding-box;
           background-clip: padding-box;
 }
+.quotemodal-body,
 .signupmodal-body {
   position: relative;
   /* max-height: 500px; */
@@ -160,7 +195,7 @@ line-height:5.6vw;
 }
 
 .modal-footer {
-  padding: 14px 15px 15px;
+  padding: 0.3vw 0.3vw 0.3vw;
    margin-bottom: 0;
   text-align: center; 
   background-color: #f5f5f5;

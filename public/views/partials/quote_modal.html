@@ -1,63 +1,61 @@
 
-<div data-ng-controller ="quoteController">
-	<div class="modal-header" >
-            <h3>Please enter some keywords,materials and colors</h3>
-			<i><h4> You can also add a short description of the product </h4></i>
+<div class="quotemodal" data-ng-controller ="quoteController">
+	<div class="quotemodal-header" >
+            Please enter some keywords,materials and colors
+			<i><h5>
+			You can also add a short description of the product
+			</h5>
+			</i>
     </div>
 		
     <div class="signupmodal-body">
-						<div class="row cardContainer">
+						
 								<div class="span3">
-									Quote Name:
+									Name of project:
 									<br />
 									<input data-ng-model="newQuote.quoteName" type="text">
 								</div>
-
 								<div class="span3">
 									Description
 									<br />
-									<input data-ng-model="newQuote.unitquantity" type="number" >
+									<input data-ng-model="newQuote.unitquantity" type="text" >
 								</div>
+								<div class="span2">
+									Where will it be sold?
+									<br />
+									<input data-ng-model="newQuote.region" type="text">
+								</div>
+<!-- 						<div class="row cardContainer">  -->
 								
+						<!-- </div> -->
+
 								<div class="span3">
-									What region are will you be selling your product?
+									Materials to use on the project
 									<br />
-									<input data-ng-model="newQuote.region" type="number"> <br/>
-									{{newProject.unitprice| currency:"€"}}   
-								</div>
-						</div>
-						<!--div for 2nd row cards -->
-						<div class="row cardContainer">					
-            
-								<div class="span3">
-									Materials you are planning to use (separate with a space)
-									<br />
-									<input data-ng-model="newQuote.matstring" type="text" >
+									<textarea data-ng-model="newQuote.matstring" type="text" class="stringTextbox"/>
 								</div>
 						
 								<div class="span3">
-									Any keywords associated with your project
+									Keywords associated with project
 									<br />
-									<input data-ng-model="newQuote.tagstring" type="text" > 
+									<textarea data-ng-model="newQuote.tagstring" type="text" class="stringTextbox"/> 
 								</div>
 		
-								<div class="span3">
-									The different Colors you are planning to use
+								<div class="span2">
+									Possible Colors
 									<br />
-									<input data-ng-model="newQuote.colorstring" type="text" > 
+									<textarea data-ng-model="newQuote.colorstring" type="text" class="stringTextbox"/>
 								</div>
-								
-						</div>
-			
 	</div>
+				
 			
 	<div class="modal-footer">
-			<div data-ng-controller="usermodalController">
+			
 			<div class="btn-toobar btn-group-justified">
 			<div class="btn-group">	
-			
-				<button class="btn btn-info btn-lg" type="submitquote()"> <i class="icon-white icon-off"></i>Request a free pricing quote</button>
-			
+			<div data-ng-controller ="quoteController">
+				<button class="btn btn-info btn-lg" data-ng-click="createQuote()"> <i class="icon-white icon-off"></i>Request a free pricing quote</button>
+			</div>
 			</div>
 			</div>	
 				<br>

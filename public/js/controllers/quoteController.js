@@ -3,8 +3,9 @@ angular.module('mean.quotes').controller('quoteController', ['$scope', '$routePa
    
 	
     $scope.createQuote = function() {
+	alert("quote button firing");
         var quote = new Quotes({
-            quoteName: $scope.newQuote.projectName,
+            quoteName: $scope.newQuote.quoteName,
 			description: $scope.newQuote.description,
 			region: $scope.newQuote.region,
             unitquantity: $scope.newQuote.unitquantity, 
@@ -14,7 +15,7 @@ angular.module('mean.quotes').controller('quoteController', ['$scope', '$routePa
 			colorstring: $scope.newQuote.colorstring
         });
         quote.$save(function(response) {
-          
+          alert("quote saved");
         });
 	this.quoteName="";
 	this.description="";
