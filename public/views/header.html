@@ -3,8 +3,10 @@
 		<div data-ng-show="global.user">
 		 <a class="brand" style="font-family:Nevis; font-size:3vw;" href="/">CUANTO 		</a>
 		</div>
+		
 		<ul class="nav">
-		<div class="btn-toobar">			
+		<div class="btn-toobar">
+		
 			<!-- <div class="btn-group"> -->
 					<li class="btn btn-med dropdown" data-ng-show="global.user">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Find a price <b class="caret"></b></a>
@@ -27,7 +29,7 @@
 			<!-- </div> -->
 			<!-- <div class="btn-group"> -->
 				<li class="btn btn-med dropdown" data-ng-show="global.user">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Find out what is trending <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Trends <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li data-ng-repeat="item in popular" data-ng-show="global.user" ui-route="/{{item.link}}">
 								<a href="#!/{{item.link}}">{{item.title}}</a>

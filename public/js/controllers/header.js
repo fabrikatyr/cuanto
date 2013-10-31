@@ -31,10 +31,6 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
 	$scope.popular = [ {
         "title": "Popular Materials",
         "link": "Pmat"
-		
-    }, { 
-		"title": "Popular Colors",
-        "link": "Pcolors"
     }, { 
 		"title": "Popular tags",
         "link": "Ptags"
