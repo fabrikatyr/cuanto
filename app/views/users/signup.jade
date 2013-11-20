@@ -1,6 +1,7 @@
 extends auth
 
 block auth
+<div class="signin">
   form.signup.form-horizontal(action="/users", method="post")
     .control-group
       label.control-label(for='name') Full name
@@ -25,4 +26,4 @@ block auth
     .form-actions
       button.btn.btn-primary(type='submit') Sign up
       &nbsp;
-   
+   </div>

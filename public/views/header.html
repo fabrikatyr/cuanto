@@ -14,6 +14,10 @@
 								<li data-ng-repeat="item in priceMenu" data-ng-show="global.user" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
 									<a href="#!/{{item.link}}">{{item.title}}</a>
 								</li>
+								<li>
+								<div data-ng-controller="quotemodalController">
+								<a href="#!/" data-ng-click="getquote()">Get custom quote</a>
+								</div>
 							</ul>
 					</li>
 			<!-- </div> -->
@@ -29,7 +33,7 @@
 			<!-- </div> -->
 			<!-- <div class="btn-group"> -->
 				<li class="btn btn-med dropdown" data-ng-show="global.user">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Trends <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Craft Trends <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li data-ng-repeat="item in popular" data-ng-show="global.user" ui-route="/{{item.link}}">
 								<a href="#!/{{item.link}}">{{item.title}}</a>
@@ -37,6 +41,11 @@
 							</ul>
 				
 				</li>
+			
+				<li class="btn btn-med" data-ng-show="global.user">
+					<a href="#/cuantomethod">How it works</a></li>
+					
+	
 			<!-- </div> -->
 			</div>	 
 		

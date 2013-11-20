@@ -10,10 +10,6 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
     }, { 
 		"title": "Price by color",
         "link": "pricebyColor"
-    }, {
-       "title": "Price by process",
-        "link": "pricebyProcess"
-		
     }];
 	
 	$scope.projectMenu = [ {
@@ -37,5 +33,9 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
     }
 	];
 	
+	 $scope.cuantomethod = [ {
+		"title": "How is works",
+		"link" : "cuantomethod"
+		}];
 	
 }]);
