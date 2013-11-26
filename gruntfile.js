@@ -63,22 +63,6 @@ module.exports = function(grunt) {
             stderr: true
           }
         },
-        bgShell: {
-          _defaults: {
-            bg: true
-          },
-          kill: {
-            cmd: 'pkill -f "node server.js"',
-            stdout: true,
-            stderr: true
-          },
-          server: {
-            cmd: 'node server.js',
-            stdout: true,
-            stderr: true,
-            bg: false
-          }
-        },
         express: {
           options: {
             // Override defaults here
