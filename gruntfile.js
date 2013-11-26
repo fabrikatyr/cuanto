@@ -55,11 +55,45 @@ module.exports = function(grunt) {
                 logConcurrentOutput: true
             }
         },
-        mochaTest: {
+
+        exec: {
+          mocha: {
+            command: 'mocha test/backend/* -R spec --timeout 10s',
+            stdout: true,
+            stderr: true
+          }
+        },
+        express: {
+          options: {
+            // Override defaults here
+          },
+          dev: {
             options: {
-                reporter: 'spec'
-            },
-            src: ['test/**/*.js']
+              script: './server.js',
+            }
+          },
+          prod: {
+            options: {
+              script: './server.js',
+              node_env: 'production'
+            }
+          },
+          test: {
+            options: {
+              background: true,
+              script: './server.js'
+            }
+          }
+        },
+        karma: {
+          unit: {
+            configFile: 'karma.conf.js',
+            singleRun: true
+          },
+          e2e: {
+            configFile: 'karma-e2e.conf.js',
+            singleRun: true
+          }
         },
         bower: {
             install: {
@@ -68,7 +102,7 @@ module.exports = function(grunt) {
                     layout: 'byComponent',
                     install: true,
                     verbose: true,
-                    cleanBowerDir: true
+                    cleanBowerDir: false
                 }
             }
         }
@@ -77,10 +111,13 @@ module.exports = function(grunt) {
     //Load NPM tasks 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-bower-task');
+    //grunt.loadNpmTasks('grunt-bg-shell');
+    grunt.loadNpmTasks('grunt-express-server');
+    grunt.loadNpmTasks('grunt-exec');
+    grunt.loadNpmTasks('grunt-karma');
 
     //Making grunt default to force in order not to break the project.
     grunt.option('force', true);
@@ -89,7 +126,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['jshint', 'concurrent']);
 
     //Test task.
-    grunt.registerTask('test', ['mochaTest']);
+    grunt.registerTask('test', ['exec:mocha', 'express:test', 'karma']);
 
     //Bower task.
     grunt.registerTask('install', ['bower']);
