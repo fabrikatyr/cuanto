@@ -1,6 +1,10 @@
 
+
+/* 
 angular.module('mean.projects').controller('projectsController', ['$scope', '$routeParams', '$location', 'Global', 'Projects','$modal','$log', function ($scope, $routeParams, $location, Global, Projects, $modal,$http,$resource,log,storeID,arraySize) {
-    
+ */
+
+angular.module('mean.projects').controller('proje111ctsController', ['$scope', '$routeParams', '$location', 'Global', 'Projects', function ($scope, $routeParams, $location, Global, Projects) {
 	
 	$scope.global = Global;
 	
@@ -49,9 +53,7 @@ angular.module('mean.projects').controller('projectsController', ['$scope', '$ro
         });
     };
 
-	}]);
-		
-	
+}]);
 angular.module('mean.projects').controller('projectsEditController',  function ($scope,$location,$modal,Global,Projects,$http,$resource,$log,storeID){
 
 	$scope.global = Global;
@@ -180,32 +182,3 @@ angular.module('mean.projects').service('arraySize', function(){
             }
         };
     });
-	
-
-angular.module('mean.projects').controller('projectCarouselCTLR', function($scope,Projects,$resource,arraySize){
-	$scope.myInterval = 5000;
-	var slides = $scope.slides = [];
-	
-	Projects.query(function(projects) {
-		arraySize.setProperty(projects.length);
-		});
-		
-	$scope.addSlide = function(i) {
-		var foo = Projects.query(function(projects) {
-		
-		var newWidth = 200 + ((slides.length + (25 * slides.length)) % 150);		
-				slides.push({
-				image: 'http://placekitten.com/' + newWidth + '/200',
-				text: projects[i].projectName,
-				unitprice: projects[i].unitprice
-				});
-		});
-  
-	};
-  
-	
-	for (var i=0; i<=arraySize.getProperty(); i++) {
-			$scope.addSlide(i);
-		}
-  });
-  

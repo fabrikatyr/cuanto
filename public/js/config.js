@@ -4,37 +4,37 @@ window.app.config(['$routeProvider',
         $routeProvider.
 		when('/myProjects',
             {
-                //controller: 'projectsCRUDController',
+               
                 templateUrl: 'views/partials/projects.html'
             })
 		.when('/pricebyMaterial',
             {
-                controller: 'projectsCRUDController',
+               
                 templateUrl: 'views/partials/pricebyMat.html'
             })
 			.when('/pricebyKeyword',
             {
-                controller: 'projectsCRUDController',
+               
                 templateUrl: 'views/partials/pricebyKeyword.html'
             })
 			.when('/pricebyColor',
             {
-                controller: 'projectsCRUDController',
+               
                 templateUrl: 'views/partials/pricebyColor.html'
             })
 			.when('/pricebyProcess',
             {
-                controller: 'projectsCRUDController',
+               
                 templateUrl: 'views/partials/pricebyProcess.html'
             })
          .when('/myMaterials',
             {
-                controller: 'materialsController',
+                
                 templateUrl: 'views/partials/myMaterials.html'
             })
          .when('/myActivities',
             {
-               // controller: 'projectsCRUDController',
+				
                 templateUrl: 'views/partials/projectdetail.html'
             })
      
