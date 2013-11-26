@@ -55,11 +55,13 @@ module.exports = function(grunt) {
                 logConcurrentOutput: true
             }
         },
-        mochaTest: {
-            options: {
-                reporter: 'spec'
-            },
-            src: ['test/backend/**/*.js']
+
+        exec: {
+          mocha: {
+            command: 'mocha test/backend/* -R spec --timeout 15s',
+            stdout: true,
+            stderr: true
+          }
         },
         bower: {
             install: {
@@ -77,10 +79,10 @@ module.exports = function(grunt) {
     //Load NPM tasks 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-nodemon');
     grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-bower-task');
+    grunt.loadNpmTasks('grunt-exec');
 
     //Making grunt default to force in order not to break the project.
     grunt.option('force', true);
@@ -89,7 +91,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['jshint', 'concurrent']);
 
     //Test task.
-    grunt.registerTask('test', ['mochaTest']);
+    grunt.registerTask('test', ['exec:mocha']);
 
     //Bower task.
     grunt.registerTask('install', ['bower']);

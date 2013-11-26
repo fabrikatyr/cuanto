@@ -39,12 +39,14 @@
         "grunt-bower-task": "latest"
     },
     "devDependencies": {
+        "mocha": "latest",
         "supertest": "latest",
         "should": "latest",
         "grunt-contrib-watch": "latest",
         "grunt-contrib-jshint": "latest",
         "grunt-nodemon": "latest",
+        "grunt-exec": "~0.4.2",
         "grunt-concurrent": "latest",
-        "grunt-mocha-test": "latest"
+        "grunt-karma": "~0.7.0"
     }
 }
