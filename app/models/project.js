@@ -14,11 +14,7 @@ var ProjectSchema = new Schema({
         type: Date,
         default: Date.now
     },
-	thumb: { 
-		data: Buffer, 
-		type: String 
-	},
-    projectName: {
+	projectName: {
         type: String,
         default: '',
         trim: true
@@ -28,24 +24,24 @@ var ProjectSchema = new Schema({
         default: '',
         trim: true
     },
-	  unitprice: {
+	unitprice: {
         type: Number,
         default: '',
         trim: true
     },
-	  startdate: {
+	startdate: {
         type: Date,
         default: '',
         trim: true
     },
-	  enddate: {
+	enddate: {
         type: Date,
         default: '',
         trim: true
     },
-	 thumb: [ImageSchema],
-	 activity: [ActivitySchema],
-	 //channel: Channelschema[],
+	thumb: [ImageSchema],
+	activity: [ActivitySchema],
+	//channel: Channelschema[],
     user: {
         type: Schema.ObjectId,
         ref: 'User'

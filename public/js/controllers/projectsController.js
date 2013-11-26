@@ -6,8 +6,8 @@ angular.module('mean.projects').controller('projectsController', ['$scope', '$ro
 	
 	
 	$scope.update = function(){
-    $scope.projects = 	Projects.query();
-	}
+	$scope.projects = Projects.query();
+	};
 	
     $scope.createProject = function() {
         var project = new Projects({
@@ -19,7 +19,7 @@ angular.module('mean.projects').controller('projectsController', ['$scope', '$ro
 			thumb : $scope.newProject.thumb
         });
 		project.$save(function(response) {
-        });
+		});
 		
 		$scope.$parent.update();
 
@@ -28,7 +28,8 @@ angular.module('mean.projects').controller('projectsController', ['$scope', '$ro
 		this.unitquantity="";
         this.duedate ="";
         this.startdate="";
-        $scope.update;
+        
+		/* $scope.update; */
     };
 
 
@@ -58,7 +59,7 @@ angular.module('mean.projects').controller('projectsEditController',  function (
 	
 	$scope.delProject = function (index){
 			
-		var index =  index;
+		
 		storeID.setProperty(index);
 				alert("index :" +index);
 		var modalprojectDelete =   $modal.open({
@@ -70,8 +71,8 @@ angular.module('mean.projects').controller('projectsEditController',  function (
 						}
 				}
 				
-		  
-			});
+				});
+			
 			modalprojectDelete.result.then(function () {
 			}, function () {
 				$log.info('Modal dismissed at: ' + new Date());
@@ -95,8 +96,8 @@ angular.module('mean.projects').controller('projectsEditController',  function (
 			
 			alert($scope.moduleDel[id].projectName);
 			$scope.moduleDel[id].$remove(function() {
-			$scope.moduleDel.splice(id, 1 ); 			
-				})
+				$scope.moduleDel.splice(id,1);
+				});
 			$modalInstance.close();
 			};
 		
@@ -137,8 +138,8 @@ angular.module('mean.projects').controller('projectsEditController',  function (
 
 		$scope.ok = function () {
 		
-		editModal.$update(function() {})
-			$modalInstance.close()
+		editModal.$update(function() {});
+			$modalInstance.close();
 		};
 		
 		$scope.cancel = function () {
@@ -205,7 +206,6 @@ angular.module('mean.projects').controller('projectCarouselCTLR', function($scop
 	
 	for (var i=0; i<=arraySize.getProperty(); i++) {
 			$scope.addSlide(i);
-		  };
+		}
   });
-  
   

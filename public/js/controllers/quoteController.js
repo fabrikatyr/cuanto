@@ -42,19 +42,15 @@ angular.module('mean.quotes').controller('quoteController', ['$scope', '$routePa
             $scope.quote = quote;
         });
     };
+	
+	}]);
 
-	 }]);
-	
-	
-	
 angular.module('mean.quotes').controller('quoteeditController',  function ($scope,$location,$modal,Quotes,$http,$resource,$log,storeID){
 
 	
 	var quote = $scope.quote;
 	
 	$scope.delQuote = function (index){
-			
-		var index =  index;
 		
 		storeID.setProperty(index);
 		
@@ -66,9 +62,8 @@ angular.module('mean.quotes').controller('quoteeditController',  function ($scop
 						return $scope.projects;
 						}
 				}
-				
-		  
 			});
+			
 			modalprojectDelete.result.then(function () {
 			}, function () {
 				$log.info('Modal dismissed at: ' + new Date());
@@ -133,8 +128,8 @@ angular.module('mean.quotes').controller('quoteeditController',  function ($scop
 
 		$scope.ok = function () {
 		
-		editModal.$update(function() {})
-			$modalInstance.close()
+		editModal.$update(function() {});
+			$modalInstance.close();
 		};
 		
 		$scope.cancel = function () {

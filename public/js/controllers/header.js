@@ -33,7 +33,7 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
     }
 	];
 	
-	 $scope.cuantomethod = [ {
+	$scope.cuantomethod = [ {
 		"title": "How is works",
 		"link" : "cuantomethod"
 		}];

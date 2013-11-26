@@ -22,7 +22,7 @@ describe('<Unit Test>', function() {
 
       user.save(function() {
         done();
-      })
+      });
     });
 
     describe('Method Save', function() {

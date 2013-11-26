@@ -12,7 +12,7 @@ angular.module('mean.projects').controller('activityController', ['$scope', '$ro
     };
 
     $scope.addActivity = function() {
-		    var project = $scope.project;
+			var project = $scope.project;
 			
 			if (!project.updated) {
             project.updated = [];
@@ -49,8 +49,8 @@ app.controller('activityEDITController', function activityController($scope,$loc
 	
 	$scope.delActivity = function (index,stepno){
 			
-		var index =  index;
-		var stepno = stepno;
+		
+		
 		deleteID.setProperty(index);
 		arrayID.setProperty(stepno);
 		
@@ -63,7 +63,6 @@ app.controller('activityEDITController', function activityController($scope,$loc
 						}
 				}
 				
-		  
 			});
 			modalactivityDelete.result.then(function () {
 			}, function () {
@@ -87,7 +86,7 @@ app.controller('activityEDITController', function activityController($scope,$loc
 			var id = deleteID.getProperty();
 			var stepno = arrayID.getProperty();
 			
-			$scope.moduleDel.splice(stepno, 1 ); 		
+			$scope.moduleDel.splice(stepno, 1 );
 			
 			$modalInstance.close(
 			project.$update(function() {
@@ -103,9 +102,7 @@ app.controller('activityEDITController', function activityController($scope,$loc
 	
 	
 $scope.editActivity = function (index,stepno) {
-		
-		var index =  index;
-		var stepno = stepno;
+	
 		deleteID.setProperty(index);
 		arrayID.setProperty(stepno);
 	
@@ -137,9 +134,9 @@ var editactivityModalController = function ($scope, $modalInstance,moduleEdit,de
 		};
 
 	$scope.okActivity = function () {
-		project.activity[stepno] = moduleEdit;
-				project.$update(function() {})
-			$modalInstance.close()
+				project.activity[stepno] = moduleEdit;
+				project.$update(function() {});
+				$modalInstance.close();
 	};
 	
 	$scope.cancelActivity = function () {
@@ -148,7 +145,7 @@ var editactivityModalController = function ($scope, $modalInstance,moduleEdit,de
 	
 
 };
-   	
+
 });
 
 angular.module('mean.projects').service('deleteID', function(){

@@ -1,5 +1,5 @@
 
-'user strict'
+'user strict';
 
 describe("sign up page tests", function() {
   beforeEach(function() {

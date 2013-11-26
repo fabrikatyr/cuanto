@@ -20,22 +20,6 @@ app.controller('projectEditController', function projectEditController(localStor
         .success(function(){
             $scope.$parent.update();
         });
-		
-		
-		// var self = this;
-
-	/* self.add = function(newProject,projects) {
-	  
-			newProject = angular.copy(newProject);
-         
-			var newProject = (JSON.stringify(newProject));
-		
-		 // $rootScope.$apply(function(){ 
-			$http.post('/api/project', newProject ).then(function(response) {
-				newProject.id = response.data.id;
-				});
-		
-      // }); */
     };
      
 });

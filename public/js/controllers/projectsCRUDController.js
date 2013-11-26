@@ -20,8 +20,7 @@ angular.module('mean.projects').controller('projectsCRUDController', ['$scope', 
 		this.unitquantity="";
         this.duedate ="";
         this.startdate="";
-        
-    };
+        };
 
 
      $scope.find = function(query) {
@@ -32,24 +31,19 @@ angular.module('mean.projects').controller('projectsCRUDController', ['$scope', 
 
     $scope.findOne = function() {
         Projects.get({
-            projectId: $routeParams.projectId
+		projectId: $routeParams.projectId
         }, function(project) {
             $scope.project = project;
         });
     };
+}]);
 
-	 }]);
-	
-	
-	
 angular.module('mean.projects').controller('projectsEditController',  function ($scope,$location,$modal,Global,Projects,$http,$resource,$log,storeID){
 
 	$scope.global = Global;
 	var project = $scope.project;
 	
 	$scope.delProject = function (index){
-			
-		var index =  index;
 		
 		storeID.setProperty(index);
 		
@@ -61,12 +55,10 @@ angular.module('mean.projects').controller('projectsEditController',  function (
 						return $scope.projects;
 						}
 				}
-				
-		  
 			});
 			modalprojectDelete.result.then(function () {
 			}, function () {
-				$log.info('Modal dismissed at: ' + new Date());
+			$log.info('Modal dismissed at: ' + new Date());
 			});   
 	};
 	
@@ -127,15 +119,13 @@ angular.module('mean.projects').controller('projectsEditController',  function (
 			};
 
 		$scope.ok = function () {
-		
-		editModal.$update(function() {})
-			$modalInstance.close()
+		editModal.$update(function() {});
+		$modalInstance.close();
 		};
 		
 		$scope.cancel = function () {
 		$modalInstance.dismiss('cancel');
 		};
-		
 
 	};
 

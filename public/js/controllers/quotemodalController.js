@@ -18,9 +18,9 @@ $scope.items = ['item1', 'item2', 'item3'];
 		});
 
 		modalInstance.result.then(function (selectedItem) {
-		  $scope.selected = selectedItem;
+		$scope.selected = selectedItem;
 		}, function () {
-		  $log.info('Modal dismissed at: ' + new Date());
+		$log.info('Modal dismissed at: ' + new Date());
 		});
 	};
 
@@ -30,8 +30,7 @@ $scope.items = ['item1', 'item2', 'item3'];
 		
 
 		$scope.selected = {
-			
-		  };
+		};
 
 	
 
@@ -39,5 +38,5 @@ $scope.items = ['item1', 'item2', 'item3'];
     $modalInstance.dismiss('cancel');
 	};
 	};
-
+	
 });

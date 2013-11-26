@@ -61,11 +61,9 @@ exports.create = function(req, res) {
 				res.send(doc.img.data);
 			}	
 		});
- }; 
-	  
-
-
-/**
+ };
+ 
+ /**
  * Update a project
  */
 exports.update = function(req, res) {

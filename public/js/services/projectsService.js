@@ -1,10 +1,10 @@
 //This handles retrieving data and is used by controllers. 3 options (server, factory, provider) with 
 //each doing the same thing just structuring the functions/data differently.
 app.service('projectsService', function(localStorage, $rootScope, $http, alert) {
-	 var self = this;
- 
+	var self = this;
 
-  self.add = function(projectName, unitquantity,unitprice,duedate) {
+	
+	self.add = function(projectName, unitquantity,unitprice,duedate) {
   
      var topID = projects.length + 1;
         projects.push({
@@ -18,21 +18,18 @@ app.service('projectsService', function(localStorage, $rootScope, $http, alert) 
         });
 		
     if (!self.newProject || !self.newProject.id) {
-     
-	  self.newProject = {
-        /* id: restaurant.id,
-        name: restaurant.name,
-        description: restaurant.description */
-	
-		projectName:newProject.projectName,
-        unit quantity: newProject.unitquantity,
-        unitprice: newProject.unitprice 
-        duedate: newProject.duedate,
-        startdate: newProject.startdate
-        
-      };
-    }
-
+		self.newProject = {
+					/* id: restaurant.id,
+					name: restaurant.name,
+					description: restaurant.description */
+					projectName: newProject.projectName,
+					unitquantity: newProject.unitquantity,
+					unitprice: newProject.unitprice,
+					duedate: newProject.duedate,
+					startdate: newProject.startdate
+				};
+		}
+	};
   /*   if (self.project.id == project.id) {
       self.items.forEach(function(cartItem) {
         if (item && cartItem.name == item.name) {
@@ -67,7 +64,7 @@ app.service('projectsService', function(localStorage, $rootScope, $http, alert) 
       // return sum + Number(item.price * item.qty);
     // }, 0); */
 	
-	    fs.appendFile(DATA_FILE, JSON.stringify(newProject), function() {
+	fs.appendFile(DATA_FILE, JSON.stringify(newProject), function() {
         process.exit(0);
       });
 	
