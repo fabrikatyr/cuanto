@@ -1,5 +1,5 @@
 
-angular.module('mean.projects').controller('projectsCRUDController', ['$scope', '$routeParams', '$location', 'Global', 'Projects','$modal','$log', function ($scope, $routeParams, $location, Global, Projects, $modal,$http,$resource,log,storeID,arraySize) {
+angular.module('mean.projects').controller('projectsController', ['$scope', '$routeParams', '$location', 'Global', 'Projects','$modal','$log', function ($scope, $routeParams, $location, Global, Projects, $modal,$http,$resource,log,storeID,arraySize) {
     
 	
 	$scope.global = Global;

@@ -1,28 +1,48 @@
 ﻿/* Bootstrap overrides */
+@media (min-width: 1200px){
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+
+width: 100%;
+height:100%;
+
+}
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+
+width: 100%;
+height:100%;
+
+}
 body {
-overflow-y:auto;
-	background-image:url('/img/bkground/sos.png');
+	overflow-y:auto;
     width:100%; 
-	height: 100%;
-	background-size: 100%  100%;  
-	background-position: left top;
-	position:absolute; 
-	margin-right: auto;
-	margin-left: auto;
+	height:100%;
+
+
+	position:relative; 
+	margin-right: 1vw;
+	margin-left: 1vw;
 }
 
 @font-face { font-family: Nevis; src: url('/font/nevis.ttf'); } 
 @font-face { font-family: Franchise; src: url('/font/FranchiseBold.ttf'); } 
 
-.splash{
-}
+
+
+
 
 a{
 text-decoration: none !important
 }
 
 .btn-med{
-  padding: 0.4vw 0.4vw;
+  padding: 0.4vw 0.4vh;
   font-size: 1.2vw;
   -webkit-border-radius: 0.3vw;
      -moz-border-radius: 0.3vw;
@@ -46,14 +66,11 @@ margin-left: 5vw;
 margin-right: 1vw;
 }
 
-/* .btn{
-line-height:1.2vw
-} */
 
 
 .content{
 	/* padding-top:4vw; */
-	
+	height: 400px;
 	top:40px;
 	z-index:-2;
 	left:0;
@@ -217,7 +234,7 @@ height: 8vh;
 
 .container-video{
    vertical-align: middle;
-   width: 50vw;
+   width: 100%;
    opacity:1;
    margin: 0 auto;
    z-index:2;
@@ -239,15 +256,16 @@ height: 8vh;
 }
 .container-fluid {
 	background-image:url('/img/bkground/PapercraftCoin.jpg');
-    width:85vw; 
+    width:90vw; 
 	height: 90vh;
 	background-size: 100%  100%;  
 	background-repeat:no-repeat;
 	background-position: left top;
 	position:relative; 
 	margin-right: auto;
-	margin-left: auto; 
-  
+	margin-left: auto;
+	padding-right: 0vw;
+	padding-left: 0vw;
   -webkit-border-radius: 0px;
 	-moz-border-radius: 0px;
 	-o-border-radius: 0px;
@@ -409,13 +427,13 @@ opacity: 1;
     margin-left: auto;
     margin-right: auto;
  }
-.cloud img{
+.cloud{
 	
-	width: auto;
-    height: 35vh;
-	 display: block;
-    margin-left: auto;
-    margin-right: auto;
+	width: 900px;
+    height: 300px;
+	display: block;
+    margin-left: 1px;
+    margin-right: 1px;
  }
  
 .navbar-inner {

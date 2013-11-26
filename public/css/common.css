@@ -4,7 +4,7 @@ footer {
     position:fixed;
     left:0px;
     bottom:0px;
-    height:30px;
+    height:0px;
     width:100%;
     background:#ddd;
     -webkit-box-shadow:0 8px 6px 6px black;
