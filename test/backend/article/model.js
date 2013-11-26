@@ -14,19 +14,19 @@ var article;
 //The tests
 describe('<Unit Test>', function() {
   describe('Model Article:', function() {
-    beforeEach(function(done) {
+    before(function(done) {
       user = new User({
         name: 'Full name',
-           email: 'test@test.com',
-           username: 'user',
-           password: 'password'
+        email: 'test@test.com',
+        username: 'user',
+        password: 'password'
       });
 
       user.save(function(err) {                
         article = new Article({
           title: 'Article Title',
-                content: 'Article Content',
-                user: user
+          content: 'Article Content',
+          user: user
         });
 
         done();
@@ -35,7 +35,7 @@ describe('<Unit Test>', function() {
 
     describe('Method Save', function() {
       it('should be able to save whithout problems', function(done) {
-        return article.save(function(err) {
+        article.save(function(err) {
           should.not.exist(err);
           done();
         });
@@ -44,7 +44,7 @@ describe('<Unit Test>', function() {
       it('should be able to show an error when try to save witout title', function(done) {
         article.title = '';
 
-        return article.save(function(err) {
+        article.save(function(err) {
           should.exist(err);
           done();
         });

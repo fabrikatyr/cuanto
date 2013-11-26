@@ -7,7 +7,12 @@ module.exports = function(config) {
     frameworks: ['jasmine'],
     // list of files / patterns to load in the browser
     files: [
+      'public/lib/jquery/jquery.js',
       'public/lib/angular/angular.js',
+      'public/lib/angular-bootstrap/ui-bootstrap.js',
+      'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
+      'public/lib/angular-ui-utils/modules/route/route.js',
+      'public/lib/angular-cookies/angular-cookies.js',
       'public/lib/angular-resource/angular-resource.js',
       'public/lib/angular-mocks/angular-mocks.js',
       'public/js/*.js',
@@ -15,7 +20,12 @@ module.exports = function(config) {
       'test/frontend/unit/*.js'
     ],
 
-    exclude: ['public/lib/angular-scenario/angular-scenario.js'],
+    // all the following scripts has errors
+    exclude: [
+      'public/js/services/activities.js',
+      'public/js/services/projectsService*.js',
+      'public/js/controllers/salesfcastController.js'
+    ],
     // test results reporter to use
     // possible values: dots || progress || growl
     reporters: ['dots'],

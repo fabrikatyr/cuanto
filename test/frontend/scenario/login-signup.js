@@ -83,5 +83,44 @@ describe("sign up page tests", function() {
     expect(element('ul.nav').last().css('display')).toEqual('block');
   });
 
-}
+  it('sign up use twitter successful', function() {
+    // sign out
+    element('.nav .dropdown a[href="/signout"]').query(function(el, done) {
+      el.click();
+      setTimeout(done, 2000);
+    });
+
+    // show sign up modal
+    element('button[title="Sign-up"]').query(function(el, done) {
+      el.click();
+      setTimeout(done, 1000);
+    });
+
+    expect(element('.modal').count()).toBe(1);
+
+    element('a[href="auth/twitter"]').query(function(el, done) {
+      el.click();
+      setTimeout(done, 3000);
+    });
+
+    expect(browser().window().path()).toEqual('/oauth/authorize');
+    expect(element('#username_or_email').count()).toBe(1);
+
+    /*
+    // fill in inputs
+    element('#username_or_email').val('');
+    element('#password').val('');
+    // click authorize
+    element('#allow').query(function(el, done) {
+      el.click();
+      setTimeout(done, 2000);
+    });
+
+    expect(binding('global.user.username')).toEqual('test');
+    expect(binding('global.authenticated')).toBe(true);
+    expect(element('ul.nav').last().css('display')).toEqual('block');
+    */
+
+  });
+});
 

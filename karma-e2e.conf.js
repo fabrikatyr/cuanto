@@ -4,19 +4,12 @@
 module.exports = function(config) {
   config.set({
     basePath: './',
-    frameworks: ['jasmine'],
+    frameworks: ['ng-scenario'],
     // list of files / patterns to load in the browser
     files: [
-      'public/lib/angular/angular.js',
-      'public/lib/angular-resource/angular-resource.js',
-      'public/lib/angular-mocks/angular-mocks.js',
-      'public/lib/angular-scenario/angular-mocks.js',
-      'public/js/*.js',
-      'public/js/**/*.js',
-      'test/frontend/unit/*.js'
+      'test/frontend/scenario/*.js'
     ],
 
-    // exclude: [''],
     // test results reporter to use
     // possible values: dots || progress || growl
     reporters: ['dots'],
@@ -31,6 +24,9 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
+    proxies: {
+      '/': 'http://localhost:3000/'
+    },
     // Start these browsers, currently available:
     // - Chrome
     // - ChromeCanary
@@ -39,13 +35,15 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 5000,
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: true
+    singleRun: true,
+
+    urlRoot: '/__karma/'
   });
 };
 
