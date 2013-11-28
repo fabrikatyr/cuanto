@@ -1,5 +1,5 @@
 ﻿
-<table class="table table-hover table-striped table-condensed table-bordered" data-ng-controller="projectsCRUDController" >
+<table class="table table-hover table-striped table-condensed table-bordered" data-ng-controller="projectController"data-ng-init="find()" >
 
 	<thead>	
 		<tr>		
@@ -32,13 +32,13 @@
                 {{ project.startdate }}
             </td>
             <td>
-                {{ project.duedate }}
+                {{ project.enddate }}
             </td>
             <td>
                {{project.unitquantity*project.unitprice | currency:"€"}}
             </td>
              <td>
-			 <div data-ng-controller="projectsEditController">
+			 <div data-ng-controller="projectEditController">
 					<button title = "Delete project" class="btn close cardClose" data-ng-click="delProject($index)"><i class ="icon-trash icon"></i></button>
 					
 					<button title = "Edit project" class="btn close cardClose" data-ng-click="editProject($index)"><i class ="icon-pencil icon"></i></button>

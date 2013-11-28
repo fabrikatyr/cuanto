@@ -1,7 +1,7 @@
 ﻿
 		
 			
-		<div data-ng-controller="projectsCRUDController" >
+		<div data-ng-controller="PCRUD" >
 			<!-- Div starting for adding project -->
 				
 				<button class="btn" ng-click="isCollapsed = !isCollapsed">Add Another Project</button>
@@ -48,32 +48,8 @@
 								
 							
 								<div class="span3">
+								</div>	
 									
-								<!-- 	<input data-ng-model="newProject.thumb" type="text" >
-								</div> -->
-								
-								 <!-- <input type="file" data-ng-model="newProject.thumb">  -->
-									<label for="newProject.thumb">Project thumbnail</label>
-										
-										<input id="newProject.thumb" 
-											type="file" 
-											accept="image/*" 
-											image="newProject.thumb" 
-											resize-max-height="300"
-											resize-max-width="250"
-											resize-quality="0.7" />
-										
-												<p>Original</p>
-										<img ng-show="newProject.thumb" ng-src="{{newProject.thumb.url}}" type="{{newProject.thumb.file.type}}"/>
-										
-										<button id="submitimage" class="btn btn-primary" type="button" 
-										
-										data-ng-click="addImage()">Add Image</button>
-			
-										<!-- <p>Resized</p>
-										<img ng-show="image2" ng-src="{{image2.resized.dataURL}}"/>
-										 -->
-									</div>
 									
 									
 									<button id="submitproject" class="btn btn-primary" type="button" 

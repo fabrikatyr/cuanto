@@ -67,7 +67,6 @@ module.exports = function(app, passport, auth) {
 	var images = require('../app/controllers/projects');
     app.get('/projects', projects.all);
     app.post('/projects', auth.requiresLogin, projects.create);
-	app.post('/images', auth.requiresLogin, images.imageupload);
     app.get('/projects/:projectId', projects.show);
     app.put('/projects/:projectId', auth.requiresLogin, auth.project.hasAuthorization, projects.update);
 	app.del('/projects/:projectId', auth.requiresLogin, auth.project.hasAuthorization, projects.destroy);

@@ -5,7 +5,6 @@ var mongoose = require('mongoose'),
     async = require('async'),
     Project = mongoose.model('Project'),
 	Activity = mongoose.model('Activity'),
-	Image = mongoose.model('Image'),
     _ = require('underscore');
 
 
@@ -41,28 +40,6 @@ exports.create = function(req, res) {
     });
 };
 
-/**
- * Update a project with image as binary
- */
- exports.imageupload = function(req, res) {
- var image = new Image(req.data);
-	image.img.data = fs.readFileSync(imgPath);
-	image.img.contentType = 'image/png';
-    image.save(function (err, image) {
-				
-			if (err) {
-				return res.send('users/signup', {
-                errors: err.errors,
-                image: image
-				});
-			}
-			else {
-				res.contentType(doc.img.contentType);
-				res.send(doc.img.data);
-			}	
-		});
- };
- 
  /**
  * Update a project
  */

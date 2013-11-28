@@ -1,0 +1,54 @@
+<div data-ng-controller ="projectController">
+
+<div class="modal-header">
+            <h3>Please set-up your project</h3>
+        </div>
+        <div class="modal-body">
+			<!-- div for 1st row cards -->
+						<div class="row cardContainer">
+								<div class="span3">
+									Project Name:
+									<br />
+									<input data-ng-model="projectNew.projectName" type="text">
+								</div>
+
+								<div class="span3">
+									Unit Quantity:
+									<br />
+									<input data-ng-model="projectNew.unitquantity" type="number" >
+								</div>
+								
+								<div class="span3">
+									Unit Price:
+									<br />
+									<input data-ng-model="projectNew.unitprice" type="number"> <br/>
+									{{newProject.unitprice| currency:"€"}}   
+								</div>
+						
+						<!--div for 2nd row cards -->
+						
+            
+								<div class="span3">
+									Start date:
+									<br />
+									<input data-ng-model="projectNew.startdate" type="date" >
+								</div>
+						
+								<div class="span3">
+									Due Date:
+									<br />
+									<input data-ng-model="projectNew.enddate" type="date" > 
+								</div>
+								
+						</div>
+					
+        </div>
+			
+	   <div class="modal-footer">
+	   <div data-ng-controller ="projectController">
+            <button class="btn btn-success" ng-click="createProject()"><i class="icon-white icon-check"></i> Update project</button>
+            <button class="btn btn-warning" ng-click="cancel()"><i class="icon-white icon-off"></i> Cancel</button>
+		</div>
+        </div>
+	
+ </div>

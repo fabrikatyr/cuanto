@@ -53,6 +53,11 @@ window.app.config(['$routeProvider',
 				//controller: 'mapController',
                 templateUrl: 'views/partials/tagsCloud.html'
             })
+		.when('/cuantomethod',
+            {
+				//controller: 'mapController',
+                templateUrl: 'views/partials/method.html'
+            })
 		.when('/', 
 			{
             templateUrl: 'views/index.html'

@@ -39,26 +39,13 @@ var ProjectSchema = new Schema({
         default: '',
         trim: true
     },
-	thumb: [ImageSchema],
 	activity: [ActivitySchema],
-	//channel: Channelschema[],
     user: {
         type: Schema.ObjectId,
         ref: 'User'
     }
 });
 
-/**
- * Image Schema
- */
-var ImageSchema = new Schema({
-    img: { data: Buffer, contentType: String },
-	
-	user: {
-        type: Schema.ObjectId,
-        ref: 'User'
-    }
-});
 /**
  * Activity Schema
  */
@@ -118,5 +105,3 @@ ProjectSchema.statics = {
 mongoose.model('Project', ProjectSchema);
 //for the Activity factory - needs to be setup
 mongoose.model('Activity', ActivitySchema);
-
-mongoose.model('Image', ImageSchema);

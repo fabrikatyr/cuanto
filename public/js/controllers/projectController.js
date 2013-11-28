@@ -1,26 +1,30 @@
 
-angular.module('mean.projects').controller('projectsCRUDController', ['$scope', '$routeParams', '$location', 'Global', 'Projects','$modal','$log', function ($scope, $routeParams, $location, Global, Projects, $modal,$http,$resource,log,deleteID) {
-    
-	$scope.global = Global;
-	
-    $scope.createProject = function() {
-        var project = new Projects({
-            projectName: $scope.newProject.projectName,
-            unitquantity: $scope.newProject.unitquantity, 
-            unitprice: $scope.newProject.unitprice, 
-            duedate: $scope.newProject.duedate, 
-            startdate: $scope.newProject.startdate
-        });
-        project.$save(function(response) {
-          
-        });
+angular.module('mean.projects').controller('projectController', ['$scope', '$routeParams', '$location','Global','Projects','$modal','$log', function ($scope, $routeParams, $location,Global, Projects, $modal,$http,$resource,log,deleteID) {
 
-        this.projectName ="";
-        this.unitprice="";
-		this.unitquantity="";
-        this.duedate ="";
-        this.startdate="";
-        };
+	$scope.global = Global;
+		
+   $scope.createProject = function() {
+   
+		
+		var project = new Projects({
+			projectName: $scope.projectNew.projectName,
+            unitquantity: $scope.projectNew.unitquantity, 
+            unitprice: $scope.projectNew.unitprice, 
+            enddate: $scope.projectNew.enddate, 
+            startdate: $scope.projectNew.startdate
+        });
+		
+		project.$save(function(response) {
+			//$location.path("projects/" + response._id);
+		});
+        
+		$scope.projectNew.projectName ="";
+        $scope.projectNew.unitprice="";
+		$scope.projectNew.unitquantity="";
+        $scope.projectNew.duedate ="";
+        $scope.projectNew.startdate="";
+	alert("operation Sucessful");
+    };
 
 
      $scope.find = function(query) {
@@ -31,16 +35,17 @@ angular.module('mean.projects').controller('projectsCRUDController', ['$scope', 
 
     $scope.findOne = function() {
         Projects.get({
-		projectId: $routeParams.projectId
+            projectId: $routeParams.projectId
         }, function(project) {
             $scope.project = project;
         });
     };
-}]);
+	
+	}]);
 
-angular.module('mean.projects').controller('projectsEditController',  function ($scope,$location,$modal,Global,Projects,$http,$resource,$log,storeID){
+angular.module('mean.projects').controller('projectEditController',  function ($scope,$location,$modal,Projects,$http,$resource,$log,storeID){
 
-	$scope.global = Global;
+	
 	var project = $scope.project;
 	
 	$scope.delProject = function (index){
@@ -56,9 +61,10 @@ angular.module('mean.projects').controller('projectsEditController',  function (
 						}
 				}
 			});
+			
 			modalprojectDelete.result.then(function () {
 			}, function () {
-			$log.info('Modal dismissed at: ' + new Date());
+				$log.info('Modal dismissed at: ' + new Date());
 			});   
 	};
 	
@@ -75,10 +81,8 @@ angular.module('mean.projects').controller('projectsEditController',  function (
 		};
 
 		$scope.remove = function () {
-			var id = deleteID.getProperty();
+			var id = storeID.getProperty();
 			$scope.moduleDel.splice(id, 1 ); 
-			alert("stuff is working");			
-			alert(moduleDel[id].projectName);
 			moduleDel[id].$remove();
 			$modalInstance.close();
 			};
@@ -90,7 +94,7 @@ angular.module('mean.projects').controller('projectsEditController',  function (
 	
 
 		
-	$scope.edit = function (id) {
+	$scope.editProject = function (id) {
 	var projects = $scope.projects;
 	
 	var modalInstance =   $modal.open({
@@ -119,13 +123,15 @@ angular.module('mean.projects').controller('projectsEditController',  function (
 			};
 
 		$scope.ok = function () {
+		
 		editModal.$update(function() {});
-		$modalInstance.close();
+			$modalInstance.close();
 		};
 		
 		$scope.cancel = function () {
 		$modalInstance.dismiss('cancel');
 		};
+		
 
 	};
 
@@ -146,8 +152,3 @@ angular.module('mean.projects').service('storeID', function(){
         };
     });
 	
-angular.module('mean.projects',['ui.bootstrap']).controller('projectCarouselCTLR', function($scope) {
-  $scope.myInterval = 5000;
-  var projects = $scope.projects = [];
-  
-});	

@@ -156,8 +156,3 @@ angular.module('mean.quotes').service('storeID', function(){
         };
     });
 	
-angular.module('mean.projects',['ui.bootstrap']).controller('projectCarouselCTLR', function($scope) {
-  $scope.myInterval = 5000;
-  var projects = $scope.projects = [];
-  
-});	
