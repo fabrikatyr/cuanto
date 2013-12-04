@@ -21,6 +21,7 @@ height:100%;
 
 }
 body {
+	background-image:url('/img/bkground/sos.png');
 	padding: 0.5vh;
 	overflow-y:auto;
     width:100%; 
@@ -391,7 +392,15 @@ opacity: 1;
   background-color: transparent;
   max-height: 40px;
 }
-
+.infograph{
+	
+	
+    height: auto;
+	display: block; 
+     margin-left: 25%; 
+     margin-right: auto; 
+    /* width: 1em; */
+ }
 
 .graph img{
 	
