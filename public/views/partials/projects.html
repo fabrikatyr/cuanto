@@ -1,12 +1,12 @@
 ﻿
-
-
 	<h3>Projects</h3>
 		<!--starting div for project data-->
+		
+		
+		
 		<div data-ng-include="'/views/partials/projectTable.html'" />
-								<button>
-								<div data-ng-controller="projectmodalController" data-ng-init="find()" >
-								<a href="#!/" data-ng-click="getnewproject()">Add new project</a>
-								</div>
+							
+							<div data-ng-controller="projectController" data-ng-init="find()"> 
+		
+								<button data-ng-click="addProject()">Add a project
 								</button>
-	</div>

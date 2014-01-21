@@ -1,0 +1,8 @@
+extends layouts/default
+
+block content
+  section(data-ng-view)
+  script(type="text/javascript").
+    window.user = !{user};
+		//script(type="text/javascript").
+		//	window.intercomSettings = {email: user._id,app_id: "bcb384dee27574d230d6aafef883b77a947c0929"

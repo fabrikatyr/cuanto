@@ -1,15 +1,15 @@
 ﻿
-<table class="table table-hover table-striped table-condensed table-bordered" data-ng-controller="projectController"data-ng-init="find()" >
+<table class="table table-hover table-striped table-condensed table-bordered" data-ng-controller="projectController" data-ng-init="find()" >
 
 	<thead>	
 		<tr>		
 			<th data-ng-click="setOrder('name')">Project Name</th>
             <th data-ng-click="setOrder('volume')">Unit volume</th>
-            <th data-ng-click="setOrder('price')">Unit price</th>
-            <th data-ng-click="setOrder('startdate')">Start date</th>
-            <th data-ng-click="setOrder('enddate')">Finish date</th>
-            <th data-ng-click="setOrder('totalrevenue')">Estimated revenue</th>
-            <th data-ng-click="setOrder('adjustactivity')"></th>
+            <th data-ng-click="setOrder('price')">Your price</th>
+            <th data-ng-click="setOrder('startdate')">Cuanto's 'common' price </th>
+            <th data-ng-click="setOrder('enddate')">Difference </th>
+            <th data-ng-click="setOrder('totalrevenue')">Gain / Loss in €</th>
+            <th data-ng-click="setOrder('adjustactivity')">Tags</th>
         </tr>
     </thead>
     <tbody>
@@ -19,26 +19,28 @@
             </td>
         </tr>
         <tr data-ng-repeat="project in projects ">
-            <td>
+            <td align="center" valign="middle">
                 {{ project.projectName }}
             </td>
             <td>
                 {{ project.unitquantity }}
             </td>
               <td>
-                {{ project.unitprice }}
+                {{ project.unitprice | currency:"€"}}
             </td>
-            <td>
-                {{ project.startdate }}
+            <td width='7%' text-align='center'>
+                {{ (project.unitprice*0.75) | currency:"€"}}
             </td>
-            <td>
-                {{ project.enddate }}
+            <td width='7%'>
+                {{ (project.unitprice - (project.unitprice*0.75) )/ project.unitprice }}%
             </td>
-            <td>
-               {{project.unitquantity*project.unitprice | currency:"€"}}
+            <td width='7%'>
+               {{((project.unitprice - (project.unitprice*0.75) )/ project.unitprice)*project.unitquantity*project.unitprice | currency:"€"}}
             </td>
              <td>
+			 
 			 <div data-ng-controller="projectEditController">
+					{{ project.tags }}		
 					<button title = "Delete project" class="btn close cardClose" data-ng-click="delProject($index)"><i class ="icon-trash icon"></i></button>
 					
 					<button title = "Edit project" class="btn close cardClose" data-ng-click="editProject($index)"><i class ="icon-pencil icon"></i></button>
@@ -48,16 +50,14 @@
         </tr>
         <tr class="info">
             <td colspan="5">
-             <b>Total Project Cost
+             <b>Net Gain / Loss
             </td>
             <td>
-                <strong><i>{{projectTotal-1}}<i></strong>
+                <strong><i>{{projectTotal}}<i></strong>
             </td>
             
         
         </tr>
-     
-        
-        
+             
     </tbody>
 </table>

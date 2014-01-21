@@ -7,9 +7,6 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
     }, {
         "title": "Price by Material",
         "link": "pricebyMaterial"
-    }, { 
-		"title": "Price by color",
-        "link": "pricebyColor"
     }];
 	
 	$scope.projectMenu = [ {

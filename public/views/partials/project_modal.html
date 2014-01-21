@@ -1,10 +1,10 @@
-<div data-ng-controller ="projectController">
+ <div class="projectmodal"  data-ng-controller ="projectController" data-ng-init="find()">
 
 <div class="modal-header">
             <h3>Please set-up your project</h3>
         </div>
         <div class="modal-body">
-			<!-- div for 1st row cards -->
+
 						<div class="row cardContainer">
 								<div class="span3">
 									Project Name:
@@ -13,42 +13,37 @@
 								</div>
 
 								<div class="span3">
-									Unit Quantity:
+									How many are you planning to make?
 									<br />
 									<input data-ng-model="projectNew.unitquantity" type="number" >
 								</div>
 								
 								<div class="span3">
-									Unit Price:
+									Estimated price per item
 									<br />
 									<input data-ng-model="projectNew.unitprice" type="number"> <br/>
-									{{newProject.unitprice| currency:"€"}}   
+									{{projectNew.unitprice| currency:"€"}}   
 								</div>
 						
 						<!--div for 2nd row cards -->
 						
             
-								<div class="span3">
-									Start date:
+								<div class="span4">
+									Tags or Keywords associated with the project (use a comma to separate)
 									<br />
-									<input data-ng-model="projectNew.startdate" type="date" >
+									<textarea cols="60" rows="4" data-ng-model="projectNew.tags" type="text"></textarea>
 								</div>
-						
-								<div class="span3">
-									Due Date:
-									<br />
-									<input data-ng-model="projectNew.enddate" type="date" > 
-								</div>
+		
 								
 						</div>
 					
         </div>
 			
 	   <div class="modal-footer">
-	   <div data-ng-controller ="projectController">
-            <button class="btn btn-success" ng-click="createProject()"><i class="icon-white icon-check"></i> Update project</button>
+	   
+            <button class="btn btn-success" ng-click="ok(projectNew)"><i class="icon-white icon-check"></i> Add project</button>
             <button class="btn btn-warning" ng-click="cancel()"><i class="icon-white icon-off"></i> Cancel</button>
 		</div>
-        </div>
+
 	
  </div>

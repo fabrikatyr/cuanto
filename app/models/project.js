@@ -39,6 +39,11 @@ var ProjectSchema = new Schema({
         default: '',
         trim: true
     },
+	tags: {
+        type: String,
+        default: '',
+        trim: true
+    },
 	activity: [ActivitySchema],
     user: {
         type: Schema.ObjectId,

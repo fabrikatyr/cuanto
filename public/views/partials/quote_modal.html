@@ -1,7 +1,7 @@
 
-<div class="quotemodal" data-ng-controller ="quoteController">
+<div class="quotemodal" data-ng-controller ="quotemodalController">
 	<div class="quotemodal-header" >
-            Please enter some keywords,materials and colors
+            Please enter some keywords and materials 
 			<i><h5>
 			You can also add a short description of the product
 			</h5>
@@ -9,7 +9,7 @@
     </div>
 		
     <div class="signupmodal-body">
-						
+						<div class="row cardContainer">  
 								<div class="span3">
 									Name of project:
 									<br />
@@ -20,12 +20,8 @@
 									<br />
 									<input data-ng-model="newQuote.unitquantity" type="text" >
 								</div>
-								<div class="span2">
-									Where will it be sold?
-									<br />
-									<input data-ng-model="newQuote.region" type="text">
-								</div>
-<!-- 						<div class="row cardContainer">  -->
+						</div>
+ 						<div class="row cardContainer">  
 								
 						<!-- </div> -->
 
@@ -40,12 +36,15 @@
 									<br />
 									<textarea data-ng-model="newQuote.tagstring" type="text" class="stringTextbox"/> 
 								</div>
-		
+						</div>
+						<div class="row cardContainer">  
 								<div class="span2">
-									Possible Colors
+									Where will it be sold?
 									<br />
-									<textarea data-ng-model="newQuote.colorstring" type="text" class="stringTextbox"/>
+									<input data-ng-model="newQuote.region" type="text">
 								</div>
+						</div>
+ 						
 	</div>
 				
 			
@@ -53,9 +52,9 @@
 			
 			<div class="btn-toobar btn-group-justified">
 			<div class="btn-group">	
-			<div data-ng-controller ="quoteController">
-				<button class="btn btn-info btn-lg" data-ng-click="createQuote()"> <i class="icon-white icon-off"></i>Request a free pricing quote</button>
-			</div>
+			<!-- <div data-ng-controller ="quoteController"> -->
+				<button class="btn btn-info btn-lg" data-ng-click="createQuote(newQuote)"> <i class="icon-white icon-off"></i>Request a free pricing quote</button>
+			<!-- </div> -->
 			</div>
 			</div>	
 				<br>

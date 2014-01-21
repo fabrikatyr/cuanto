@@ -1,42 +1,70 @@
 
-
-angular.module('mean.quotes').controller('quotemodalController',  function ($scope,$location,$modal,Global,$http,$resource,$log){
-
-$scope.items = ['item1', 'item2', 'item3'];
-
-	
-	$scope.getquote = function (){
-
-		var modalInstance = $modal.open({
-		templateUrl: 'views/partials/quote_modal.html',
-			controller: ModalInstanceCtrl,
-				resolve: {
-					items: function () {
-					return $scope.items;
-					}
-				}
-		});
-
-		modalInstance.result.then(function (selectedItem) {
-		$scope.selected = selectedItem;
-		}, function () {
-		$log.info('Modal dismissed at: ' + new Date());
-		});
-	};
+angular.module('mean.quotes').controller('quotemodalController', ['$scope', '$routeParams', '$location','Global','Quotes','$modal','$log', function ($scope, $routeParams, $location,Global, Quotes, $modal,$http,$resource,log,deleteID) {
 
 
-	var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
+$scope.getquote = function (){
 
+		/* var Quote = $scope.newQuote; */
+
+			var modalInstance = $modal.open({
+			templateUrl: 'views/partials/quote_modal.html',
+				controller: ModalInstanceCtrl,
+			/* resolve: {
+						Quote: function () {
+						return $scope.newQuote;
+						}
+				} */
+			});
+
+			modalInstance.result.then(function (newQuote) {
 		
-
-		$scope.selected = {
+			}, function () {
+			$log.info('Modal dismissed at: ' + new Date());
+			});
 		};
 
-	
 
-	$scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-	};
-	};
+	var ModalInstanceCtrl = function ($scope, $modalInstance) {
+
+		$scope.selected = {
+		
+		};
+
+		$scope.createQuote = function(newQuote) {
+		
+		/* alert(newQuote.quoteName); */
+		var quote = new Quotes({
+            quoteName: newQuote.quoteName, 
+			description: newQuote.description,
+			region: newQuote.region,
+            unitquantity: newQuote.unitquantity, 
+            unitprice: newQuote.unitprice, 
+            matstring: newQuote.matstring,
+			tagstring: newQuote.tagstring,
+			colorstring: newQuote.colorstring
+        });
+			quote.$save(function(response) {
+			alert("quote saved");
+			});
+		
+		
+			this.quoteName="";
+			this.description="";
+			this.region=""; 
+			this.unitquantity="";
+			this.unitprice="";
+			this.matstring="";
+			this.tagstring="";
+			this.colorstring="";
+		
+		$modalInstance.close();
+		};
+
+
+		$scope.cancel = function () {
+			$modalInstance.dismiss('cancel');
+			};
 	
-});
+	};
+
+}]);

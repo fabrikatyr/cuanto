@@ -2,7 +2,6 @@
 
 angular.module('mean.signup').controller('usermodalController',  function ($scope,$location,$modal,Global,$http,$resource,$log){
 	
-$scope.items = ['item1', 'item2', 'item3'];
 	
 	$scope.signup = function (){
 

@@ -4,8 +4,8 @@
         "name": "Cuanto Pricing tool - Beta"
     },
     "facebook": {
-        "clientID": "1419089901652771",
-        "clientSecret": "df66f1716a395cccf67ee1f84b8c1484",
+        "clientID": "124614661078199",
+        "clientSecret": "87360e64adee3412f5c283cb15db77f0",
         "callbackURL": "http://cuanto.fabrikatyr.com/#!/auth/facebook/callback"
     },
     "twitter": {

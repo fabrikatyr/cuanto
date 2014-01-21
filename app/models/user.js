@@ -18,6 +18,7 @@ var UserSchema = new Schema({
     provider: String,
     hashed_password: String,
     salt: String,
+	//created_at:{ type: String, default: (new Date()).getTime() }
     facebook: {},
     twitter: {},
     github: {},
